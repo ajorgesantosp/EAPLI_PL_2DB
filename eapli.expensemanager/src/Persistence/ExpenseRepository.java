@@ -24,4 +24,19 @@ public class ExpenseRepository  implements IExpenseRepository
         listExpense.add(exp);
       
     }
+    
+    /**
+     * return the last Expense
+     */
+    public Expense findLast(){
+        
+        if(listExpense.isEmpty()){
+             System.out.println(" No Expense recorded!");
+             return null;
+        }
+        else{
+            Expense exp = listExpense.get(listExpense.size());
+            return exp;
+        }
+    }
 }

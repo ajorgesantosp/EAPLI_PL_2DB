@@ -42,5 +42,8 @@ public class Expense {
         return amount;
     }
 
+    public String getDescription(){
+        return description;
+    }
    
 }
