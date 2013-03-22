@@ -19,8 +19,8 @@ public class ExpenseRegisterMoneyController {
     public ExpenseRegisterMoneyController() {
     }
 
-    public void registerExpense(String what, Date date, BigDecimal amount, String type) {
-        PaymentMean pm = new PaymentMean(type);
+    public void registerExpense(String what, Date date, BigDecimal amount, String mean) {
+        PaymentMean pm = new PaymentMean(mean);
         Expense expense = new Expense( what, date, amount, pm);
         ExpenseRepository repo = new ExpenseRepository();
         repo.save(expense);
