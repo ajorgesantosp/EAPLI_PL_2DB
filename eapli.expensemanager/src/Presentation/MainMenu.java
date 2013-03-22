@@ -30,7 +30,7 @@ public class MainMenu {
                 ui.mainLoop();
                 break;
             case 2:
-                ExpensesUI uiLastExp = new ExpensesUI();
+                ExpensesUI expui = new ExpensesUI();
                 break;
         }
     }
