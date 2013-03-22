@@ -31,6 +31,7 @@ public class MainMenu {
                 break;
             case 2:
                 ExpensesUI expui = new ExpensesUI();
+                expui.mainLoop();
                 break;
         }
     }
