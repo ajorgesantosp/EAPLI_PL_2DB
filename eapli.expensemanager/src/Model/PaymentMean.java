@@ -10,11 +10,11 @@ package Model;
  */
 public class PaymentMean {
     
-    String type;
+    String mean;
     
-    public PaymentMean(String type)
+    public PaymentMean(String mean)
     {
-        this.type = type;
+        this.mean = mean;
     }
     
 }
