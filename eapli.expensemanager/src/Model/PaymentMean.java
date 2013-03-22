@@ -12,7 +12,7 @@ public class PaymentMean {
     
     String type;
     
-    PaymentMean(String type)
+    public PaymentMean(String type)
     {
         this.type = type;
     }

@@ -5,6 +5,7 @@
 package Controllers;
 
 import Model.Expense;
+import Model.PaymentMean;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,13 +14,14 @@ import Persistence.*;
  *
  * @author Paulo Gandra Sousa
  */
-public class ExpenseRegisterController {
+public class ExpenseRegisterMoneyController {
 
-    public ExpenseRegisterController() {
+    public ExpenseRegisterMoneyController() {
     }
 
-    public void registerExpense(String what, Date date, BigDecimal amount) {
-        Expense expense = new Expense( what, date, amount);
+    public void registerExpense(String what, Date date, BigDecimal amount, String type) {
+        PaymentMean pm = new PaymentMean(type);
+        Expense expense = new Expense( what, date, amount, pm);
         ExpenseRepository repo = new ExpenseRepository();
         repo.save(expense);
     }

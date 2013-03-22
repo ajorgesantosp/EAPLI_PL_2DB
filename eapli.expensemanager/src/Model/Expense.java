@@ -20,9 +20,12 @@ public class Expense {
    
     BigDecimal amount;
     
+    
+    PaymentMean mean;
+    
     protected Expense() {}
     
-    public Expense( String description, Date dateOccurred, BigDecimal amount) {
+    public Expense( String description, Date dateOccurred, BigDecimal amount, PaymentMean mean) {
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
@@ -32,10 +35,12 @@ public class Expense {
         }
         this.description = description;
         this.amount = amount;
+        this.mean = mean;
     }
     
-    public Expense( String description, int year, int month, int day, BigDecimal amount) {
-        this( description, DateTime.newDate(year, month, day), amount);
+    
+    public Expense( String description, int year, int month, int day, BigDecimal amount, PaymentMean pm) {
+        this( description, DateTime.newDate(year, month, day), amount, pm);
     }
     
     public BigDecimal getAmount() {

@@ -4,7 +4,7 @@
  */
 package Presentation;
 
-import Controllers.ExpenseRegisterController;
+import Controllers.ExpenseRegisterMoneyController;
 
 import eapli.util.Console;
 import java.math.BigDecimal;
@@ -23,8 +23,8 @@ class ExpenseRegisterUI {
         double value = Console.readDouble("Amount:");
         BigDecimal amount = new BigDecimal(value);
         
-        ExpenseRegisterController controller = new ExpenseRegisterController();
-        controller.registerExpense(what, date, amount);
+        ExpenseRegisterMoneyController controller = new ExpenseRegisterMoneyController();
+        controller.registerExpense(what, date, amount, "money");
         
         System.out.println("expense recorded.");
     }
