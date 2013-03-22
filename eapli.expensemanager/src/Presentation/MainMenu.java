@@ -16,7 +16,7 @@ public class MainMenu {
         System.out.println("  EXPENSE MANAGER  ");
         System.out.println("===================\n");
         
-        System.out.println("1. Register an expense");
+        System.out.println("1. Register an expense with money payment");
         System.out.println("2. Show last expense");
         System.out.println("0. Exit\n\n");
         
