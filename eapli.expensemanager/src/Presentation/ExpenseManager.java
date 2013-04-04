@@ -7,6 +7,7 @@ package Presentation;
 import Presentation.MainMenu;
 import eapli.util.Math;
 import Persistence.*;
+import eapli.bootstrap.ExpenseBootstrapper;
 
 /**
  *
@@ -18,6 +19,9 @@ public class ExpenseManager {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        ExpenseBootstrapper eb= new ExpenseBootstrapper();
+        
         MainMenu menu = new MainMenu();
         menu.mainLoop();
     }

@@ -6,6 +6,7 @@ package Persistence;
 import Model.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 /**
  *
@@ -35,8 +36,31 @@ public class ExpenseRepository  implements IExpenseRepository
              return null;
         }
         else{
-            Expense exp = listExpense.get(listExpense.size());
+            Expense exp = listExpense.get(listExpense.size()-1);
             return exp;
         }
+    }
+    
+    public List<Expense> getLastMonthExpense(){
+        
+        List<Expense> monthExpense= new ArrayList<Expense>();
+        
+        Date d=new Date();
+        for(int i=0; i<listExpense.size();i++){
+            
+            if(listExpense.get(i).getDate().getMonth()==d.getMonth()){
+                monthExpense.add(listExpense.get(i));
+                
+            }
+            
+        }
+        
+        
+        return monthExpense;
+        
+    }
+    public List<Expense> getList() {
+        List<Expense> aExp= listExpense;
+        return aExp;
     }
 }

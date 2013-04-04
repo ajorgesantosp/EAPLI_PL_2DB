@@ -6,6 +6,7 @@ package Controllers;
 
 import Model.Expense;
 import Persistence.ExpenseRepository;
+import java.util.List;
 
 /**
  *
@@ -24,5 +25,18 @@ public class ExpensesController {
         ExpenseRepository er = new ExpenseRepository();
         return er.findLast();
     } 
-    
+    public List<Expense> getLastMonthExpenses(){
+        
+        ExpenseRepository repo = new ExpenseRepository();
+        
+       return repo.getLastMonthExpense();
+        
+        
+    }
+    public List<Expense> getListExpenditures() {
+        ExpenseRepository exprep = new ExpenseRepository();
+        List<Expense> aExp = exprep.getList();
+      
+        return aExp;
+    }
 }

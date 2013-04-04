@@ -14,9 +14,9 @@ import Persistence.*;
  *
  * @author Paulo Gandra Sousa
  */
-public class ExpenseRegisterMoneyController {
+public class ExpenseRegisterController {
 
-    public ExpenseRegisterMoneyController() {
+    public ExpenseRegisterController() {
     }
 
     public void registerExpense(String what, Date date, BigDecimal amount, String mean) {
