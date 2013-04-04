@@ -33,4 +33,10 @@ public class ExpensesController {
         
         
     }
+    public List<Expense> getListExpenditures() {
+        ExpenseRepository exprep = new ExpenseRepository();
+        List<Expense> aExp = exprep.getList();
+      
+        return aExp;
+    }
 }

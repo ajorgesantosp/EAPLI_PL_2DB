@@ -49,5 +49,22 @@ public class ExpensesUI {
         }
 
     }
+        
+          public void ListExpenditures() {
+        System.out.println("* * *  SHOW LIST EXPENDITURES  * * *\n");
+      
+        ExpensesController expcont = new ExpensesController();
+        
+        List<Expense> aExp = expcont.getListExpenditures();
+        
+        for (int i = 0; i < aExp.size(); i++) {
+          
+            System.out.println("<--- "+(i+1)+"º Expense --->");
+            System.out.println("Amount : "+ aExp.get(i).getAmount().doubleValue()+"");
+            System.out.println("Description : "+ aExp.get(i).getDescription()+"\n");
+ 
+      }
+        
+    }
        
 }
