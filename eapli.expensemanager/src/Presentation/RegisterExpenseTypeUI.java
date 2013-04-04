@@ -22,7 +22,7 @@ public class RegisterExpenseTypeUI {
         String what = Console.readLine("Tipo:");
         
         ExpenseRegisterController controller = new ExpenseRegisterController();
-        controller.registerExpenseType(what);
+        //controller.registerExpenseType(what);
         
         System.out.println("expense type recorded.");
     }
