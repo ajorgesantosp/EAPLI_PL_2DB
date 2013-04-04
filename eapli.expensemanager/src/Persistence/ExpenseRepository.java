@@ -59,4 +59,8 @@ public class ExpenseRepository  implements IExpenseRepository
         return monthExpense;
         
     }
+    public List<Expense> getList() {
+        List<Expense> aExp= listExpense;
+        return aExp;
+    }
 }
