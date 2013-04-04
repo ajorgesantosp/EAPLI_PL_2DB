@@ -6,13 +6,12 @@ package Model;
 
 /**
  *
- * @author Emanuel
+ * @author dg5s5dfsd5fs5d
  */
 
 public class ExpenseType {
     
     private String type;
-    private int id;
 
     protected ExpenseType() {}
 

@@ -23,10 +23,13 @@ public class RegisterExpenseTypesUI {
         Date date = Console.readDate("When:");
         double value = Console.readDouble("Amount:");
         BigDecimal amount = new BigDecimal(value);
-        //ExpenseType type = Console.readLine("Type");
+        String type = Console.readLine("Type");
+        
+        ExpenseType expType = new ExpenseType (type);
+        
         
         ExpenseRegisterController controller = new ExpenseRegisterController();
-        //controller.registerExpenseWithType(what, date, amount,type);
+        controller.registerExpenseWithType(what, date, amount,expType);
         
         System.out.println("expense with expense type recorded.");
     }

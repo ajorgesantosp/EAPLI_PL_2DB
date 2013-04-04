@@ -4,12 +4,9 @@
  */
 package Presentation;
 
-import Controllers.ExpenseRegisterController;
+import Controllers.ExpenseTypeController;
 
 import eapli.util.Console;
-import java.math.BigDecimal;
-import java.util.Date;
-
 /**
  *
  * @author Emanuel
@@ -21,8 +18,8 @@ public class RegisterExpenseTypeUI {
         
         String what = Console.readLine("Tipo:");
         
-        ExpenseRegisterController controller = new ExpenseRegisterController();
-        //controller.registerExpenseType(what);
+        ExpenseTypeController controller = new ExpenseTypeController();
+        controller.registerExpenseType(what);
         
         System.out.println("expense type recorded.");
     }
