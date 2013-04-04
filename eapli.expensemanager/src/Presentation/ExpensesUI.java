@@ -62,8 +62,7 @@ public class ExpensesUI {
             System.out.println("<--- "+(i+1)+"º Expense --->");
             System.out.println("Amount : "+ aExp.get(i).getAmount().doubleValue()+"");
             System.out.println("Description : "+ aExp.get(i).getDescription()+"\n");
- 
-      }
+       }
         
     }
        
