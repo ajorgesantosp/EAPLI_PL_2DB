@@ -15,7 +15,7 @@ public class DebiteCardRepository {
 
     private static ArrayList<DebitCard> listDebitCards = new ArrayList<DebitCard>();
     
-    private DebiteCardRepository(){}
+    public DebiteCardRepository(){}
     
     /**
      * Adicionar uma novo cartão de debito no repositorio
@@ -32,7 +32,7 @@ public class DebiteCardRepository {
      * 
      * @return Lista completa dos cartões de debito
      */
-    public List<DebitCard> getAllDebitCard(){
+    public ArrayList<DebitCard> getAllDebitCard(){
         return listDebitCards;
     }
     
