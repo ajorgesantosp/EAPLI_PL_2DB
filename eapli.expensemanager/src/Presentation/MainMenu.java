@@ -14,6 +14,12 @@ import eapli.util.Console;
 public class MainMenu implements BaseUI {
 
     public void doShow() {
+        
+        /*
+        System.out.println("----------------------------------------");
+        System.out.println("--------------BALANCE-------------------");
+        showBalance();*/
+         
         System.out.println("===================");
         System.out.println("  EXPENSE MANAGER  ");
         System.out.println("===================\n");
@@ -23,6 +29,9 @@ public class MainMenu implements BaseUI {
         System.out.println("3. Register an Expense with Expense Type");
         System.out.println("4. Show expenses");
         System.out.println("0. Exit\n\n");
+        
+        
+        
 
         int option = Console.readInteger("Please choose a option");
         switch (option) {
@@ -50,7 +59,7 @@ public class MainMenu implements BaseUI {
 
     @Override
     public void showBalance() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 }
  
