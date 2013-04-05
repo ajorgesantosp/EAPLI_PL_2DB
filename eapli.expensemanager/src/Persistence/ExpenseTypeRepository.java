@@ -22,7 +22,16 @@ public class ExpenseTypeRepository implements IExpenseTypeRepository {
     {
         if (exp==null) throw new IllegalArgumentException();
         listExpenseType.add(exp);
-      
+        
+    }
+    
+    public List ListExpenseTypes(){
+        
+     //    for(Object o : listExpenseType){
+      //      System.out.println(o+""+((ExpenseTypeRepository)o));
+                
+      //  }
+      return listExpenseType;
     }
     
     
