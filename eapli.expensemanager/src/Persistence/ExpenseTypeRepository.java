@@ -34,7 +34,12 @@ public class ExpenseTypeRepository implements IExpenseTypeRepository {
       return listExpenseType;
     }
     
-    public List<ExpenseType> getExpenseType(){
+    /**
+     * @autor nbentoneves
+     * 
+     * @return Lista completa dos tipode de despesa
+     */
+    public List<ExpenseType> getAllExpenseType(){
         
         return listExpenseType;
     }
