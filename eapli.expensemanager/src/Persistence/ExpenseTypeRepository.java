@@ -34,5 +34,9 @@ public class ExpenseTypeRepository implements IExpenseTypeRepository {
       return listExpenseType;
     }
     
+    public List<ExpenseType> getExpenseType(){
+        
+        return listExpenseType;
+    }
     
 }
