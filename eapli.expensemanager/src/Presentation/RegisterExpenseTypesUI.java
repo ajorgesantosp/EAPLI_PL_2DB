@@ -29,7 +29,7 @@ public class RegisterExpenseTypesUI {
         
         
         ExpenseRegisterController controller = new ExpenseRegisterController();
-        controller.registerExpenseWithType(what, date, amount,expType);
+        //controller.registerExpenseWithType(what, date, amount,expType);
         
         System.out.println("expense with expense type recorded.");
     }
