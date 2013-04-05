@@ -6,13 +6,14 @@ package Presentation;
 
 import Model.Expense;
 import Controllers.ExpensesController;
+import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.List;
 /**
  *
  * @author i101068
  */
-public class ExpensesUI {
+public class ExpensesUI{
     
         Expense exp;
         BigDecimal amount;
@@ -24,13 +25,27 @@ public class ExpensesUI {
     
     public void mainLoop() {
 
+        int option=0;
+        
+        do{
+        
+        System.out.println("===================");
+        System.out.println("  LIST EXPENSES  ");
+        System.out.println("===================\n");
 
-        System.out.println("* * *  Show Last Expense  * * *\n");
-
-        ExpensesController controller = new ExpensesController();
-        Expense e = controller.getLastExpense();
-        System.out.println("Last expense Description: " + e.getDescription());
-        System.out.println("Last expense value: " + e.getAmount());
+        System.out.println("1. Last Month Expenses");
+        System.out.println("0. Exit\n\n");
+            option = Console.readInteger("Please choose a option");
+            
+        switch (option) {
+            case 0:
+                
+                return;
+            case 1:
+                lastMonthExpensesLoop();
+                break;
+        }
+        }while(option!=0);
 
 
     }

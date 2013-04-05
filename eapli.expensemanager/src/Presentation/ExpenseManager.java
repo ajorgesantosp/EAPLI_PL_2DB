@@ -23,6 +23,6 @@ public class ExpenseManager {
         ExpenseBootstrapper eb= new ExpenseBootstrapper();
         
         MainMenu menu = new MainMenu();
-        menu.mainLoop();
+        menu.doShow();
     }
 }

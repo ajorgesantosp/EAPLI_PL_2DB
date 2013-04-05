@@ -11,9 +11,9 @@ import eapli.util.Console;
  *
  * @author Paulo Gandra Sousa
  */
-public class MainMenu {
+public class MainMenu implements BaseUI {
 
-    public void mainLoop() {
+    public void doShow() {
         System.out.println("===================");
         System.out.println("  EXPENSE MANAGER  ");
         System.out.println("===================\n");
@@ -21,7 +21,7 @@ public class MainMenu {
         System.out.println("1. Register an expense");
         System.out.println("2. Add Expense Type");
         System.out.println("3. Register an Expense with Expense Type");
-        System.out.println("4. Show expense for last month");
+        System.out.println("4. Show expenses");
         System.out.println("0. Exit\n\n");
 
         int option = Console.readInteger("Please choose a option");
@@ -43,8 +43,14 @@ public class MainMenu {
                 break;
             case 4:
                 ExpensesUI exp = new ExpensesUI();
-                exp.lastMonthExpensesLoop();
+                exp.mainLoop();
                 break;
         }
     }
+
+    @Override
+    public void showBalance() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
+ 
