@@ -2,9 +2,8 @@ package Controllers;
 
 import Model.ExpenseType;
 import Model.DebitCard;
-import Persistence.DebiteCardRepository;
+import Persistence.DebitCardRepository;
 import Persistence.ExpenseTypeRepository;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,11 +28,11 @@ public class ExpenseDebitCardController {
         
     }
     
-    public ArrayList<DebitCard> getDebitCard() throws IllegalArgumentException{
+    public List<DebitCard> getDebitCard() throws IllegalArgumentException{
         
-        ArrayList<DebitCard> debitCards;
+        List<DebitCard> debitCards;
         
-        DebiteCardRepository debitRepository = new DebiteCardRepository();
+        DebitCardRepository debitRepository = new DebitCardRepository();
         
         //Lista completa dos cartões de debito
         debitCards = debitRepository.getAllDebitCard();
