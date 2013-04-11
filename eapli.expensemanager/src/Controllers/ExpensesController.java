@@ -4,11 +4,9 @@
  */
 package Controllers;
 
-import Model.DebitCard;
 import Model.Expense;
 import Model.ExpenseType;
 import Model.PaymentMean;
-import Persistence.DebitCardRepository;
 import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
 import java.math.BigDecimal;
@@ -49,20 +47,20 @@ public class ExpensesController {
      * @return
      * @throws IllegalArgumentException
      */
-    public List<DebitCard> getDebitCard() throws IllegalArgumentException {
+    public List<PaymentMean> getPaymentMean() throws IllegalArgumentException {
 
-        List<DebitCard> debitCards;
+        List<PaymentMean> paymentMeans;
 
-        DebitCardRepository debitRepository = new DebitCardRepository();
+        PaymentMeansRepository payMeansRepository = new PaymentMeansRepository();
 
         //Lista completa dos cartões de debito
-        debitCards = debitRepository.getAllDebitCard();
+        paymentMeans = payMeansRepository.getAllPaymentMeans();
 
-        if (debitCards == null) {
+        if (paymentMeans == null) {
             throw new IllegalArgumentException();
         }
 
-        return debitCards;
+        return paymentMeans;
     }
 
     /**
