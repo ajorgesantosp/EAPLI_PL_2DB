@@ -2,3 +2,4 @@
 
 #Ignorar build
 /eapli.expensemanager/build/
+/eapli.expensemanager/nbproject/private/
