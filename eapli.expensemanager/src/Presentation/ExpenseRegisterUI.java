@@ -4,17 +4,14 @@
  */
 package Presentation;
 
-import Controllers.ExpenseRegisterController;
-import Controllers.ExpenseDebitCardController;
-import Model.DebitCard;
 import Model.ExpenseType;
+import Controllers.ExpensesController;
+import Model.PaymentMean;
 
-import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -44,25 +41,12 @@ class ExpenseRegisterUI {
         double value = in.nextDouble();
         BigDecimal amount = new BigDecimal(value);
         
-        
-        ExpenseRegisterController controller = new ExpenseRegisterController();
-        controller.registerExpense(what, date, amount, "money");
-        
-        System.out.println("expense recorded.");
-
-
-    }
-
-    //Metodo em desenvolvimento
-    /*
-    public void expenseDebitCardPayment(String what, Date date, BigDecimal amount) {
-
-        int opExpenseType = in.nextInt();
+        //int opExpenseType = in.nextInt();
         int countExpenseType=0;
         
-        ExpenseDebitCardController controller = new ExpenseDebitCardController();
-        List<ExpenseType> listExpenseType = controller.getExpenseType();
-        ArrayList<DebitCard> listDebitCard = controller.getDebitCard();
+        ExpensesController controller = new ExpensesController();
+        ArrayList<ExpenseType> listExpenseType = new ArrayList<ExpenseType>(controller.getExpenseType());
+        ArrayList<PaymentMean> listPaymentMean = new ArrayList<PaymentMean>(controller.getPaymentMean());
         
         System.out.println("List Expense Type:");
         
@@ -74,18 +58,16 @@ class ExpenseRegisterUI {
         System.out.println("Select Expense Type (ID-Number):");
         ExpenseType expenseTypeObj = listExpenseType.get(in.nextInt());
         
-        System.out.println("List Debit Card");
+        System.out.println("List Payment Means:");
         
-        for (DebitCard obj : listDebitCard) {
-            System.out.println("ID:" + listDebitCard.indexOf(obj) + " | " + obj.getNumDC() + " | " + obj.getNameDC());
+        for (PaymentMean obj : listPaymentMean) {
+            System.out.println("ID:" + listPaymentMean.indexOf(obj) + " | " + obj.getMean());
         }
         
-        System.out.println("Select Debit Cart (ID-Number):");
-        DebitCard debitCardObj = listDebitCard.get(in.nextInt());
+        System.out.println("Select Payment Means (ID-Number):");
+        PaymentMean paymentMeanObj = listPaymentMean.get(in.nextInt());
         
-        ExpenseRegisterController controller2 = new ExpenseRegisterController();
-        controller2.registerExpense(;
-        
-    }*/
-
+        System.out.println("expense recorded.");
+  
+    }
 }
