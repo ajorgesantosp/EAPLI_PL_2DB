@@ -4,7 +4,6 @@
  */
 package Presentation;
 
-import Controllers.ExpenseRegisterController;
 import Model.ExpenseType;
 import eapli.util.Console;
 import java.math.BigDecimal;
