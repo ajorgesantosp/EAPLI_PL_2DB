@@ -26,8 +26,8 @@ public class ExpenseTypeController {
     public void listExpense(){
         
        ExpenseTypeRepository repo = new ExpenseTypeRepository();
-       System.out.println(repo.ListExpenseTypes());
-        
+       System.out.println(repo.getAllExpenseType());
+       
     }
     
 }
