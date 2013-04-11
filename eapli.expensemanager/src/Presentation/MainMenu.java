@@ -28,6 +28,7 @@ public class MainMenu implements BaseUI {
         System.out.println("2. Add Expense Type");
         System.out.println("3. Register an Expense with Expense Type");
         System.out.println("4. Show expenses");
+        System.out.println("5. List Expense Types");
         System.out.println("0. Exit\n\n");
         
         
@@ -54,6 +55,10 @@ public class MainMenu implements BaseUI {
                 ExpensesUI exp = new ExpensesUI();
                 exp.mainLoop();
                 break;
+            case 5:
+                 ListExpenseTypeUI listexp = new ListExpenseTypeUI();
+                 listexp.mainLoop();
+                 break;
         }
       }while(option!=0);
     }
