@@ -17,6 +17,7 @@ public class PaymentMean {
         this.mean = mean;
     }
 
+    
     /**
      * @return the mean
      */
