@@ -1,0 +1,4 @@
+/eapli.expensemanager/dist/
+
+#Ignorar build
+/eapli.expensemanager/build/
