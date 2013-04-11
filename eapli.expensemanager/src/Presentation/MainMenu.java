@@ -14,9 +14,9 @@ import eapli.util.Console;
 public class MainMenu implements BaseUI {
 
     public void doShow() {
-        
-        /*
-        System.out.println("----------------------------------------");
+      int option=0; 
+      do{
+        /*System.out.println("----------------------------------------");
         System.out.println("--------------BALANCE-------------------");
         showBalance();*/
          
@@ -33,7 +33,7 @@ public class MainMenu implements BaseUI {
         
         
 
-        int option = Console.readInteger("Please choose a option");
+        option = Console.readInteger("Please choose a option");
         switch (option) {
             case 0:
                 System.out.println("bye bye ...");
@@ -55,8 +55,9 @@ public class MainMenu implements BaseUI {
                 exp.mainLoop();
                 break;
         }
+      }while(option!=0);
     }
-
+   
     @Override
     public void showBalance() {
        

@@ -15,7 +15,7 @@ import java.util.Scanner;
  *
  * @author i101068
  */
-public class ExpensesUI {
+public class ExpensesUI implements BaseUI{
 
     Expense exp;
     BigDecimal amount;
@@ -41,7 +41,6 @@ public class ExpensesUI {
 
             switch (option) {
                 case 0:
-
                     return;
                 case 1:
                     lastMonthExpensesLoop();
@@ -92,5 +91,15 @@ public class ExpensesUI {
         Scanner sc = new Scanner(System.in);
         sc.nextLine();
 
+    }
+
+    @Override
+    public void doShow() {
+        
+    }
+
+    @Override
+    public void showBalance() {
+        
     }
 }
