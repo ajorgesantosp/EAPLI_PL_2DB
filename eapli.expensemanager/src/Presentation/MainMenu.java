@@ -48,7 +48,7 @@ public class MainMenu implements BaseUI {
                 uitype.mainLoop();
                 break;
             case 3:
-                RegisterExpenseTypesUI uitypes = new RegisterExpenseTypesUI();
+                RegisterExpenseTypeUI uitypes = new RegisterExpenseTypeUI();
                 uitypes.mainLoop();
                 break;
             case 4:
