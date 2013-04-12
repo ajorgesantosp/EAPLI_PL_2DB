@@ -5,12 +5,12 @@
 package Controllers;
 
 import Model.PaymentMean;
-import Persistence.ExpenseTypeRepository;
 import Persistence.PaymentMeanRepository;
 
 /**
  *
- * @author i110512
+ * @author i110512 
+ * @author i111114 
  */
 public class PaymentMeanController {
      public void registerPaymentMean(String mean) {
@@ -19,7 +19,7 @@ public class PaymentMeanController {
         repo.save(payMean);
     }
     
-    public void listExpense(){
+    public void listPaymentMean(){
         
        PaymentMeanRepository repo = new PaymentMeanRepository();
        System.out.println(repo.getAllPaymentMean());
