@@ -90,9 +90,16 @@ public class ExpensesController {
         return aExp;
     }
 
-    public void registerExpense(String what, Date date, BigDecimal amount, String mean) {
-        PaymentMean pm = new PaymentMean(mean);
-        Expense expense = new Expense(what, date, amount, pm);
+    /*public void registerExpense(String what, Date date, BigDecimal amount, String mean) {
+     * PaymentMean pm = new PaymentMean(mean);
+     * Expense expense = new Expense(what, date, amount, pm);
+     * ExpenseRepository repo = new ExpenseRepository();
+     * repo.save(expense);
+     * }*/
+    
+    
+    public void createExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMean pM) {
+        Expense expense = new Expense(what, date, amount, expType,pM);
         ExpenseRepository repo = new ExpenseRepository();
         repo.save(expense);
     }
