@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author nbento
  */
-public class ExpensesController {
+public class ExpensesController extends BaseController{
 
     /**
      * @autor nbento
