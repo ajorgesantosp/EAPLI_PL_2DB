@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Model.Expense;
 import Controllers.ExpensesController;
 import eapli.util.Console;
@@ -15,20 +16,24 @@ import java.util.Scanner;
  *
  * @author i101068
  */
-public class ExpensesUI {
+public class ExpensesUI extends BaseUI {
 
     Expense exp;
     BigDecimal amount;
     String description;
 
+    ExpensesController ec;
     public ExpensesUI() {
+        ec=new ExpensesController();
     }
 
-    public void mainLoop() {
+    public void doShow() {
 
         int option = 0;
 
         do {
+            
+            this.showBalance();
 
             System.out.println("===================");
             System.out.println("  LIST EXPENSES  ");
@@ -62,8 +67,8 @@ public class ExpensesUI {
     public void lastMonthExpensesLoop() {
 
 
-        ExpensesController controller = new ExpensesController();
-        List<Expense> l = controller.getLastMonthExpenses();
+        
+        List<Expense> l = ec.getLastMonthExpenses();
 
         System.out.println("* * *  Show Last Month Expense  * * *\n");
 
@@ -81,9 +86,9 @@ public class ExpensesUI {
     public void ListExpenditures() {
         System.out.println("* * *  SHOW LIST EXPENDITURES  * * *\n");
 
-        ExpensesController expcont = new ExpensesController();
+        
 
-        List<Expense> aExp = expcont.getListExpenditures();
+        List<Expense> aExp = ec.getListExpenditures();
 
         for (int i = 0; i < aExp.size(); i++) {
 
@@ -102,9 +107,9 @@ public class ExpensesUI {
     public void getWeeklyExpenses(){
         System.out.println("* * *  SHOW WEEKLY EXPENDITURES  * * *\n");
 
-        ExpensesController expcont = new ExpensesController();
+        
 
-        List<Expense> l = expcont.getWeeklyExpenses();
+        List<Expense> l = ec.getWeeklyExpenses();
         System.out.println("* * *  Show Current Week Expensea  * * *\n");
 
         for (int i = 0; i < l.size(); i++) {
@@ -114,6 +119,11 @@ public class ExpensesUI {
         System.out.println("Press Enter to continue.");
         Scanner sc = new Scanner(System.in);
         sc.nextLine();
+    }
+
+    @Override
+    protected BaseController getController() {
+        return ec;
     }
     
 }

@@ -4,15 +4,23 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
+
 /**
  *
  * @author Filipe
  */
-public interface BaseUI {
-    
+public abstract class BaseUI {
+
+    BaseController bc;
+
     abstract void doShow();
-    
-    public void showBalance();
-    
+
+    protected abstract BaseController getController();
+
+    public void showBalance() {
+       getController().showWeeklyExpenses();
+       getController().ShowlastMonthExpensesLoop();
+    }
     //
 }
