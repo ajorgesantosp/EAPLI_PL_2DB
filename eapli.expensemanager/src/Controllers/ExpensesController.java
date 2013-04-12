@@ -9,6 +9,7 @@ import Model.ExpenseType;
 import Model.PaymentMean;
 import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
+import Persistence.PaymentMeansRepository;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -54,7 +55,7 @@ public class ExpensesController {
         PaymentMeansRepository payMeansRepository = new PaymentMeansRepository();
 
         //Lista completa dos cartões de debito
-        paymentMeans = payMeansRepository.getAllPaymentMeans();
+        paymentMeans = payMeansRepository.getAllExpenseType();
 
         if (paymentMeans == null) {
             throw new IllegalArgumentException();
