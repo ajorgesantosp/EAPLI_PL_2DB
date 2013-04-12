@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Model.ExpenseType;
 import eapli.util.Console;
 
@@ -11,11 +12,14 @@ import eapli.util.Console;
  *
  * @author Paulo Gandra Sousa
  */
-public class MainMenu implements BaseUI {
+public class MainMenu{
+
 
     public void doShow() {
       int option=0; 
       do{
+          
+         
         /*System.out.println("----------------------------------------");
         System.out.println("--------------BALANCE-------------------");
         showBalance();*/
@@ -53,7 +57,7 @@ public class MainMenu implements BaseUI {
                 break;
             case 4:
                 ExpensesUI exp = new ExpensesUI();
-                exp.mainLoop();
+                exp.doShow();
                 break;
             case 5:
                  ListExpenseTypeUI listexp = new ListExpenseTypeUI();
@@ -62,10 +66,8 @@ public class MainMenu implements BaseUI {
         }
       }while(option!=0);
     }
-   
-    @Override
-    public void showBalance() {
-       
-    }
+
+
+    
 }
  

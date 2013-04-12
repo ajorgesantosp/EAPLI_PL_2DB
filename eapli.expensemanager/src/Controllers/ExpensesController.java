@@ -9,7 +9,7 @@ import Model.ExpenseType;
 import Model.PaymentMean;
 import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
-import Persistence.PaymentMeansRepository;
+import Persistence.PaymentMeanRepository;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author nbento
  */
-public class ExpensesController {
+public class ExpensesController extends BaseController{
 
     /**
      * @autor nbento
@@ -52,10 +52,10 @@ public class ExpensesController {
 
         List<PaymentMean> paymentMeans;
 
-        PaymentMeansRepository payMeansRepository = new PaymentMeansRepository();
+        PaymentMeanRepository payMeansRepository = new PaymentMeanRepository();
 
         //Lista completa dos cartões de debito
-        paymentMeans = payMeansRepository.getAllExpenseType();
+        paymentMeans = payMeansRepository.getAllPaymentMean();
 
         if (paymentMeans == null) {
             throw new IllegalArgumentException();
@@ -90,9 +90,16 @@ public class ExpensesController {
         return aExp;
     }
 
-    public void registerExpense(String what, Date date, BigDecimal amount, String mean) {
-        PaymentMean pm = new PaymentMean(mean);
-        Expense expense = new Expense(what, date, amount, pm);
+    /*public void registerExpense(String what, Date date, BigDecimal amount, String mean) {
+     * PaymentMean pm = new PaymentMean(mean);
+     * Expense expense = new Expense(what, date, amount, pm);
+     * ExpenseRepository repo = new ExpenseRepository();
+     * repo.save(expense);
+     * }*/
+    
+    
+    public void createExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMean pM) {
+        Expense expense = new Expense(what, date, amount, expType,pM);
         ExpenseRepository repo = new ExpenseRepository();
         repo.save(expense);
     }
