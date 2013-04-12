@@ -8,16 +8,16 @@ package Model;
  *
  * @author i101068
  */
-public class PaymentMean {
+public class PaymentMean extends BaseType{
     
     private String mean;
     
-    public PaymentMean(String mean)
+    public PaymentMean( String description, String mean)
     {
+        super(description);
         this.mean = mean;
     }
 
-    
     /**
      * @return the mean
      */

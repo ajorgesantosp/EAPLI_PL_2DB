@@ -9,13 +9,14 @@ package Model;
  * @author dg5s5dfsd5fs5d
  */
 
-public class ExpenseType {
+public class ExpenseType extends BaseType{
     
     private String type;
 
     protected ExpenseType() {}
 
-    public ExpenseType(String type) {
+    public ExpenseType(String description, String type) {
+        super(description);
         this.type = type;
         }
     

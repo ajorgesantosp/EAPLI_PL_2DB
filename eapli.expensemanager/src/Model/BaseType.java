@@ -14,7 +14,14 @@ public class BaseType {
     
     String description;
 
-    public BaseType(int id, String description){
+    static int lastID;
+    
+    public BaseType(){
+        
+        }
+        
+    public BaseType(String description){
+        
         if (description == null) {
             throw new IllegalArgumentException();
         }
@@ -22,8 +29,8 @@ public class BaseType {
         if (id == -1) {
             throw new IllegalArgumentException();
         }
-        
-        this.id=id;
+        lastID++;
+        this.id=lastID;
         this.description=description;
         
     }
