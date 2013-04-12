@@ -42,6 +42,22 @@ public class Expense {
         
     }
     
+     public Expense( String description, Date dateOccurred, BigDecimal amount, ExpenseType type,PaymentMean mean) {
+        if (description == null || dateOccurred == null || amount == null || type == null) {
+            throw new IllegalArgumentException();
+        }
+        // cannot record a negative expense or a zero EUR expense
+        if (amount.signum() == -1 || amount.signum() ==  0) {
+            throw new IllegalArgumentException();
+        }
+        this.description = description;
+        this.amount = amount;
+        this.type=type;
+        this.mean=mean;
+        this.d=dateOccurred;
+        
+    }
+    
     public Expense( String description, Date dateOccurred, BigDecimal amount, PaymentMean mean) {
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
