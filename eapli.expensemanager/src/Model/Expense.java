@@ -104,7 +104,7 @@ public class Expense {
 
         System.out.println("**********************************");
         System.out.println("Descriçao: " + this.description);
-        System.out.println("Data: " + this.d.getDay()+"/"+this.d.getMonth()+"/"+ano);
+        System.out.println("Data: " + this.d.getDate()+"/"+this.d.getMonth()+"/"+ano);
         System.out.println("Valor: " + this.getAmount().doubleValue());
         System.out.println("**********************************\n");
 
