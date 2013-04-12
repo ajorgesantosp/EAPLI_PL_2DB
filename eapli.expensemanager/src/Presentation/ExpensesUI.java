@@ -15,7 +15,7 @@ import java.util.Scanner;
  *
  * @author i101068
  */
-public class ExpensesUI implements BaseUI{
+public class ExpensesUI {
 
     Expense exp;
     BigDecimal amount;
@@ -36,17 +36,22 @@ public class ExpensesUI implements BaseUI{
 
             System.out.println("1. Last Month Expenses");
             System.out.println("2. All Expenses");
+            System.out.println("3. Current Week Expenses");
             System.out.println("0. Exit\n\n");
             option = Console.readInteger("Please choose a option");
 
             switch (option) {
                 case 0:
+
                     return;
                 case 1:
                     lastMonthExpensesLoop();
                     break;
                 case 2:
                     ListExpenditures();
+                    break;
+                case 3:
+                    getWeeklyExpenses();
                     break;
             }
         } while (option != 0);
@@ -84,22 +89,31 @@ public class ExpensesUI implements BaseUI{
 
             System.out.println("<--- " + (i + 1) + "º Expense --->");
             System.out.println("Amount : " + aExp.get(i).getAmount().doubleValue() + "");
-            System.out.println("Description : " + aExp.get(i).getDescription() + "\n");
+            System.out.println("Description : " + aExp.get(i).getDescription() + "");
+            System.out.println("Date : " + aExp.get(i).getDate()+ "\n");
         }
-        
+
         System.out.println("Press Enter to continue.");
         Scanner sc = new Scanner(System.in);
         sc.nextLine();
 
     }
+    
+    public void getWeeklyExpenses(){
+        System.out.println("* * *  SHOW WEEKLY EXPENDITURES  * * *\n");
 
-    @Override
-    public void doShow() {
-        
-    }
+        ExpensesController expcont = new ExpensesController();
 
-    @Override
-    public void showBalance() {
-        
+        List<Expense> l = expcont.getWeeklyExpenses();
+        System.out.println("* * *  Show Current Week Expensea  * * *\n");
+
+        for (int i = 0; i < l.size(); i++) {
+            l.get(i).expenseToString();
+
+        }
+        System.out.println("Press Enter to continue.");
+        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
     }
+    
 }
