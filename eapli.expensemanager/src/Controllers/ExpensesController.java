@@ -96,4 +96,13 @@ public class ExpensesController {
         ExpenseRepository repo = new ExpenseRepository();
         repo.save(expense);
     }
+    
+       public List<Expense> getWeeklyExpenses(){
+
+        ExpenseRepository exprep=new ExpenseRepository();
+        List<Expense> aExp=exprep.getWeeklyExpenses();
+        return aExp;
+        
+        
+    }
 }

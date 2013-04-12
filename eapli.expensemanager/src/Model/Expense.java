@@ -58,6 +58,22 @@ public class Expense extends BaseType{
         
     }
     
+     public Expense( String description, Date dateOccurred, BigDecimal amount, ExpenseType type,PaymentMean mean) {
+        if (description == null || dateOccurred == null || amount == null || type == null) {
+            throw new IllegalArgumentException();
+        }
+        // cannot record a negative expense or a zero EUR expense
+        if (amount.signum() == -1 || amount.signum() ==  0) {
+            throw new IllegalArgumentException();
+        }
+        this.description = description;
+        this.amount = amount;
+        this.type=type;
+        this.mean=mean;
+        this.d=dateOccurred;
+        
+    }
+    
     public Expense( String description, Date dateOccurred, BigDecimal amount, PaymentMean mean) {
         super(description);
         if (dateOccurred == null || amount == null) {
@@ -121,7 +137,7 @@ public class Expense extends BaseType{
 
         System.out.println("**********************************");
         System.out.println("Descriçao: " + this.description);
-        System.out.println("Data: " + this.d.getDay()+"/"+this.d.getMonth()+"/"+ano);
+        System.out.println("Data: " + this.d.getDate()+"/"+this.d.getMonth()+"/"+ano);
         System.out.println("Valor: " + this.getAmount().doubleValue());
         System.out.println("**********************************\n");
 
