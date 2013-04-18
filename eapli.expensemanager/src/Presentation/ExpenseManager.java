@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Model.RecordExpense;
 import Presentation.MainMenu;
 import eapli.util.Math;
 import Persistence.*;
@@ -21,6 +22,8 @@ public class ExpenseManager {
     public static void main(String[] args) {
         
         ExpenseBootstrapper eb= new ExpenseBootstrapper();
+        RecordExpense re=new RecordExpense();
+        re.loadRepository();
         
         MainMenu menu = new MainMenu();
         menu.doShow();

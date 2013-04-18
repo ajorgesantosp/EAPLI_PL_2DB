@@ -69,27 +69,9 @@ public class ExpensesController extends BaseController{
      *
      * @return
      */
-    public Expense getLastExpense() {
-        ExpenseRepository er = new ExpenseRepository();
-        return er.findLast();
-    }
-
-    public List<Expense> getLastMonthExpenses() {
-
-        ExpenseRepository repo = new ExpenseRepository();
-
-        return repo.getLastMonthExpense();
 
 
-    }
-
-    public List<Expense> getListExpenditures() {
-        ExpenseRepository exprep = new ExpenseRepository();
-        List<Expense> aExp = exprep.getList();
-
-        return aExp;
-    }
-
+   
     /*public void registerExpense(String what, Date date, BigDecimal amount, String mean) {
      * PaymentMean pm = new PaymentMean(mean);
      * Expense expense = new Expense(what, date, amount, pm);
@@ -104,12 +86,5 @@ public class ExpensesController extends BaseController{
         repo.save(expense);
     }
     
-       public List<Expense> getWeeklyExpenses(){
-
-        ExpenseRepository exprep=new ExpenseRepository();
-        List<Expense> aExp=exprep.getWeeklyExpenses();
-        return aExp;
-        
-        
-    }
+ 
 }

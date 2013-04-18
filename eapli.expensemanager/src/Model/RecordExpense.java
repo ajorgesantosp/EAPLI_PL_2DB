@@ -15,41 +15,40 @@ import java.util.List;
  * @author Filipe
  */
 public class RecordExpense {
-    
+
     ExpenseRepository expr;
-    List<Expense> lista;
-    
-    public RecordExpense(){
-        expr= new ExpenseRepository();
-        lista= new ArrayList<Expense>();
+    private static List<Expense> lista = new ArrayList<Expense>();;
+
+    public RecordExpense() {
+        expr = new ExpenseRepository();
+        //lista = new ArrayList<Expense>();
     }
-    
-    public void loadRepository(){
-        lista=expr.getList();
-        
+
+    public void loadRepository() {
+        lista = expr.getList();
+
     }
-    
-    public void register(Expense exp){
+
+    public void register(Expense exp) {
         lista.add(exp);
         expr.save(exp);
-        
-    }
-    
-   
-    public List<Expense> getListExpenditures() {
-                
-        if(lista!=null)
-        return lista;
-        else
-            return null;
-    
-    
-    }
-    
-    
-     public List<Expense> getWeeklyExpenses(){
 
-         // Get calendar set to current date and time
+    }
+
+    public List<Expense> getListExpenditures() {
+
+        if (lista != null) {
+            return lista;
+        } else {
+            return null;
+        }
+
+
+    }
+
+    public List<Expense> getWeeklyExpenses() {
+
+        // Get calendar set to current date and time
         Calendar c = Calendar.getInstance();
 
 // Set the calendar to monday of the current week
@@ -75,13 +74,12 @@ public class RecordExpense {
 
         }
         return weekly;
-        
-        
-        
+
+
+
     }
-    
-     
-      public List<Expense> getLastMonthExpense() {
+
+    public List<Expense> getLastMonthExpense() {
 
         List<Expense> monthExpense = new ArrayList<Expense>();
 
@@ -98,5 +96,16 @@ public class RecordExpense {
 
         return monthExpense;
 
+    }
+
+    public Expense findLast() {
+
+        if (lista.isEmpty()) {
+            System.out.println(" No Expense recorded!");
+            return null;
+        } else {
+            Expense exp = lista.get(lista.size() - 1);
+            return exp;
+        }
     }
 }
