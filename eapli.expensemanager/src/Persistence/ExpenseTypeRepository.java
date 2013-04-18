@@ -27,10 +27,10 @@ public class ExpenseTypeRepository implements IExpenseTypeRepository {
     
     public List ListExpenseTypes(){
         
-     //    for(Object o : listExpenseType){
-      //      System.out.println(o+""+((ExpenseTypeRepository)o));
-                
-      //  }
+    //   for(Object o : listExpenseType){
+     //       System.out.println(o+""+((ExpenseTypeRepository)o));
+    //            
+     //   }
       return listExpenseType;
     }
     

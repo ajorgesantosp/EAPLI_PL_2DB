@@ -12,7 +12,7 @@ public class PaymentMean extends BaseType{
     
     private String mean;
     
-    public PaymentMean( String description, String mean)
+    public PaymentMean(String description, String mean)
     {
         super(description);
         this.mean = mean;
@@ -32,4 +32,8 @@ public class PaymentMean extends BaseType{
         this.mean = mean;
     }
     
+    @Override
+    public String toString(){
+        return  "PaymentMean: " + this.mean + " Description: " + this.description;
+    }
 }

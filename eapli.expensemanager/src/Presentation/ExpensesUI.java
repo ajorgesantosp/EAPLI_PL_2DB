@@ -6,11 +6,9 @@ package Presentation;
 
 import Controllers.BaseController;
 import Model.Expense;
-import Controllers.RecordExpensesController;
+import Controllers.ListExpensesController;
 import eapli.util.Console;
 import java.math.BigDecimal;
-import java.util.List;
-import java.util.Scanner;
 
 /**
  *
@@ -22,9 +20,13 @@ public class ExpensesUI extends BaseUI {
     BigDecimal amount;
     String description;
 
-    RecordExpensesController ec;
+
+    ListExpensesController ec;
+
     public ExpensesUI() {
-        ec=new RecordExpensesController();
+
+        ec=new ListExpensesController();
+
     }
 
     public void doShow() {
