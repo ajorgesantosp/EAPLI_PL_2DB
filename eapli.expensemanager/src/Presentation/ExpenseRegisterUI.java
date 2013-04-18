@@ -41,8 +41,6 @@ class ExpenseRegisterUI {
         double value = in.nextDouble();
         BigDecimal amount = new BigDecimal(value);
         
-        //int opExpenseType = in.nextInt();
-        int countExpenseType=0;
         
         ExpensesController controller = new ExpensesController();
         ArrayList<ExpenseType> listExpenseType = new ArrayList<ExpenseType>(controller.getExpenseType());
