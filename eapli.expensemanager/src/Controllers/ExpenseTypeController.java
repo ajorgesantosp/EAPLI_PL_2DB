@@ -22,10 +22,6 @@ public class ExpenseTypeController {
         repo.save(expType);
     }
     
-    public ExpenseTypeRepository listExpense(){
-        
-       ExpenseTypeRepository repo = new ExpenseTypeRepository(); 
-       return repo;
-    }
+
     
 }
