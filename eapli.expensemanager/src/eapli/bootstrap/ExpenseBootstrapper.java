@@ -7,6 +7,8 @@ package eapli.bootstrap;
 import Model.Expense;
 import Model.PaymentMean;
 import Persistence.ExpenseRepository;
+import Persistence.ExpenseTypeRepository;
+import Model.ExpenseType;
 import Persistence.PaymentMeanRepository;
 import java.math.BigDecimal;
 
@@ -27,6 +29,10 @@ public class ExpenseBootstrapper {
         repo2.save(new PaymentMean("Teste Cartao Debito","Cartao Debito"));
         repo2.save(new PaymentMean("Teste Cartao Credito","Cartao Credito"));
         repo2.save(new PaymentMean("Teste Dinheiro","Dinheiro"));
+        
+        ExpenseTypeRepository repo3=new ExpenseTypeRepository();
+        repo3.save(new ExpenseType("Despesas de alimentação", "Alimentação"));
+        repo3.save(new ExpenseType("Despesas de transportes", "Transportes"));
     
     }
 }
