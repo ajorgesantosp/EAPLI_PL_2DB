@@ -5,13 +5,12 @@
 package Presentation;
 
 import Model.ExpenseType;
-import Controllers.ExpensesController;
+import Controllers.RecordExpensesController;
 import Model.PaymentMean;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -29,28 +28,28 @@ class ExpenseRegisterUI {
         System.out.print("Description:");
         String what = in.nextLine();
         System.out.print("When:");
-        System.out.println("   ->Day:");
+        System.out.print("   ->Day:");
         int day, month, year;
         day = in.nextInt();
-        System.out.println("   ->Month:");
+        System.out.print("   ->Month:");
         month = in.nextInt();
-        System.out.println("   ->Year:");
+        System.out.print("   ->Year:");
         year = in.nextInt();
-        Date date = new Date(year,month,day);
+        
+        Date date = new Date(year, month, day);
+        
         System.out.print("Amount:");
         double value = in.nextDouble();
         BigDecimal amount = new BigDecimal(value);
         
-        
-        ExpensesController controller = new ExpensesController();
+        RecordExpensesController controller = new RecordExpensesController();
         ArrayList<ExpenseType> listExpenseType = new ArrayList<ExpenseType>(controller.getExpenseType());
         ArrayList<PaymentMean> listPaymentMean = new ArrayList<PaymentMean>(controller.getPaymentMean());
         
         System.out.println("List Expense Type:");
         
-        for (Iterator<ExpenseType> it = listExpenseType.iterator(); it.hasNext();) {
-            ExpenseType expenseType = it.next();
-            System.out.print("ID:" + it + " | " + expenseType.getType()); 
+        for (ExpenseType obj : listExpenseType) {
+            System.out.println("ID:" + listExpenseType.indexOf(obj) + " | " + obj.getType());
         }
         
         System.out.println("Select Expense Type (ID-Number):");
@@ -68,6 +67,6 @@ class ExpenseRegisterUI {
         controller.createExpense(what, date, amount, expenseTypeObj, paymentMeanObj);
         
         System.out.println("expense recorded.");
-  
+        
     }
 }
