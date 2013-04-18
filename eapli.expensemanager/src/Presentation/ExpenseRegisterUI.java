@@ -67,6 +67,8 @@ class ExpenseRegisterUI {
         System.out.println("Select Payment Means (ID-Number):");
         PaymentMean paymentMeanObj = listPaymentMean.get(in.nextInt());
         
+        controller.createExpense(what, date, amount, expenseTypeObj, paymentMeanObj);
+        
         System.out.println("expense recorded.");
   
     }
