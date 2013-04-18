@@ -4,7 +4,7 @@
  */
 package Presentation;
 
-import Controllers.PaymentMeanController;
+import Controllers.ListPaymentMeanController;
 import Model.PaymentMean;
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class ListPaymentMeanUI {
         System.out.println("* * *  LIST PAYMENT MEANS  * * *\n");
         
         
-        PaymentMeanController controller = new PaymentMeanController();
+        ListPaymentMeanController controller = new ListPaymentMeanController();
         for(PaymentMean m : controller.listPaymentMean())
         {
             System.out.println(m.toString());
