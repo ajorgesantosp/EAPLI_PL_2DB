@@ -13,8 +13,8 @@ import Persistence.PaymentMeanRepository;
  * @author i111114 
  */
 public class PaymentMeanController {
-     public void registerPaymentMean(String mean) {
-        PaymentMean payMean = new PaymentMean(mean);
+     public void registerPaymentMean(String description, String mean) {
+        PaymentMean payMean = new PaymentMean(description, mean);
         PaymentMeanRepository repo = new PaymentMeanRepository();
         repo.save(payMean);
     }

@@ -17,8 +17,8 @@ import java.util.List;
 
 public class ExpenseTypeController {
     
-    public void registerExpenseType(String type) {
-        ExpenseType expType = new ExpenseType(type);
+    public void registerExpenseType(String discription, String type) {
+        ExpenseType expType = new ExpenseType(discription, type);
         ExpenseTypeRepository repo = new ExpenseTypeRepository();
         repo.save(expType);
     }
