@@ -41,8 +41,6 @@ class ExpenseRegisterUI {
         double value = in.nextDouble();
         BigDecimal amount = new BigDecimal(value);
         
-        //int opExpenseType = in.nextInt();
-        int countExpenseType=0;
         
         ExpensesController controller = new ExpensesController();
         ArrayList<ExpenseType> listExpenseType = new ArrayList<ExpenseType>(controller.getExpenseType());
@@ -66,6 +64,8 @@ class ExpenseRegisterUI {
         
         System.out.println("Select Payment Means (ID-Number):");
         PaymentMean paymentMeanObj = listPaymentMean.get(in.nextInt());
+        
+        controller.createExpense(what, date, amount, expenseTypeObj, paymentMeanObj);
         
         System.out.println("expense recorded.");
   
