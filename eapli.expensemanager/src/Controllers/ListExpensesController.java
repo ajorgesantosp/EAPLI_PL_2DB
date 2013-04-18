@@ -5,6 +5,7 @@
 package Controllers;
 
 import Model.Expense;
+import Model.RecordExpense;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ import java.util.List;
 public class ListExpensesController extends BaseController{
     RecordExpense rec;
     public ListExpensesController(){
-        
+        rec=new RecordExpense();
     }
     
     public List<Expense> getWeeklyExpenses(){
@@ -22,10 +23,12 @@ public class ListExpensesController extends BaseController{
     }
     
     public List<Expense> getListExpenditures(){
-        return rec.getList();
+        
+      
+        return rec.getListExpenditures();
     }
     
     public List<Expense> getLastMonthExpenses(){
-        return rec.getLastMonthExpenses();
+        return rec.getLastMonthExpense();
     }
 }

@@ -5,6 +5,7 @@
 package Controllers;
 
 import Model.Expense;
+import Model.RecordExpense;
 import Persistence.ExpenseRepository;
 import java.util.List;
 import java.util.Scanner;
@@ -15,20 +16,27 @@ import java.util.Scanner;
  */
 public abstract class BaseController {
 
+    
     private List<Expense> getLastMonthExpenses() {
 
+        /*
         ExpenseRepository repo = new ExpenseRepository();
 
-        return repo.getLastMonthExpense();
+        return repo.getLastMonthExpense();*/
+        
+        RecordExpense re=new RecordExpense();
+        
+        return re.getLastMonthExpense();
 
 
     }
 
     private List<Expense> getWeeklyExpenses() {
 
-        ExpenseRepository exprep = new ExpenseRepository();
-        List<Expense> aExp = exprep.getWeeklyExpenses();
-        return aExp;
+        //ExpenseRepository exprep = new ExpenseRepository();
+        RecordExpense re=new RecordExpense();
+        return re.getWeeklyExpenses();
+        
 
 
     }

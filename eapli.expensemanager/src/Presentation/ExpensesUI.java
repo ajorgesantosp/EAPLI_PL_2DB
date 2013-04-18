@@ -7,6 +7,7 @@ package Presentation;
 import Controllers.BaseController;
 import Model.Expense;
 import Controllers.ListExpensesController;
+import Model.RecordExpense;
 import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.List;
@@ -23,8 +24,11 @@ public class ExpensesUI extends BaseUI {
     String description;
 
     ListExpensesController ec;
+    
+  
     public ExpensesUI() {
         ec=new ListExpensesController();
+        
     }
 
     public void doShow() {
