@@ -16,7 +16,6 @@ import java.util.List;
 
 // Register PaymentMean
 public class PaymentMeanController {
-
      public void registerPaymentMean(String description, String mean) {
         PaymentMean payMean = new PaymentMean(description, mean);
         PaymentMeanRepository repo = new PaymentMeanRepository();

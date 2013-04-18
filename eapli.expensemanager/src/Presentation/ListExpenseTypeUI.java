@@ -4,7 +4,7 @@
  */
 package Presentation;
 
-import Controllers.ExpenseTypeController;
+import Controllers.ListExpenseTypeController;
 import Persistence.ExpenseTypeRepository;
 
 
@@ -18,7 +18,7 @@ public class ListExpenseTypeUI{
         System.out.println("* * *  LIST EXPENSE TYPES  * * *\n");
         
         
-        ExpenseTypeController controller = new ExpenseTypeController();
+        ListExpenseTypeController controller = new ListExpenseTypeController();
         ExpenseTypeRepository a;
         a=controller.listExpense();
         
