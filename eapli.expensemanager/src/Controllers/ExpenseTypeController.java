@@ -16,8 +16,8 @@ import Persistence.ExpenseTypeRepository;
 
 public class ExpenseTypeController {
     
-    public void registerExpenseType(String description, String type) {
-        ExpenseType expType = new ExpenseType(description,type);
+    public void registerExpenseType(String discription, String type) {
+        ExpenseType expType = new ExpenseType(discription, type);
         ExpenseTypeRepository repo = new ExpenseTypeRepository();
         repo.save(expType);
     }
