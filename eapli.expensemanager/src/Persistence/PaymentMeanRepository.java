@@ -37,7 +37,7 @@ public class PaymentMeanRepository implements IPaymentMeanRepository{
     
     public List<PaymentMean> getAllPaymentMean(){
         
-        return listPaymentMean;
+        return new ArrayList<PaymentMean>(listPaymentMean);
     }
     
 }
