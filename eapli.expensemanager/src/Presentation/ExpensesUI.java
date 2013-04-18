@@ -20,13 +20,9 @@ public class ExpensesUI extends BaseUI {
     BigDecimal amount;
     String description;
 
-
     ListExpensesController ec;
-
     public ExpensesUI() {
-
         ec=new ListExpensesController();
-
     }
 
     public void doShow() {
