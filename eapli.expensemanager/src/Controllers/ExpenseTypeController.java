@@ -6,7 +6,6 @@ package Controllers;
 
 import Model.ExpenseType;
 import Persistence.ExpenseTypeRepository;
-import java.util.List;
 
 /**
  *
@@ -17,8 +16,8 @@ import java.util.List;
 
 public class ExpenseTypeController {
     
-    public void registerExpenseType(String type) {
-        ExpenseType expType = new ExpenseType(type);
+    public void registerExpenseType(String description, String type) {
+        ExpenseType expType = new ExpenseType(description,type);
         ExpenseTypeRepository repo = new ExpenseTypeRepository();
         repo.save(expType);
     }
