@@ -5,6 +5,8 @@
 package Presentation;
 
 import Controllers.PaymentMeanController;
+import Model.PaymentMean;
+import java.util.List;
 
 /**
  *
@@ -17,8 +19,10 @@ public class ListPaymentMeanUI {
         
         
         PaymentMeanController controller = new PaymentMeanController();
-        controller.listPaymentMean(); 
-        
+        for(PaymentMean m : controller.listPaymentMean())
+        {
+            System.out.println(m.toString());
+        }
         System.out.println("the end!");
     }
 }

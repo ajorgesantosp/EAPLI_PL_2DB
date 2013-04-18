@@ -17,10 +17,11 @@ public class RegisterPaymentMeanUI {
         public void mainLoop() {
         System.out.println("* * *  REGISTER AN PAYMENT MEAN  * * *\n");
         
-        String what = Console.readLine("Payment mean:");
+        String payMean = Console.readLine("Payment mean:");
+        String desc = Console.readLine("Description:");
         
         PaymentMeanController controller = new PaymentMeanController();
-        controller.registerPaymentMean(what);
+        controller.registerPaymentMean(desc, payMean);
         
         System.out.println("payment mean recorded.");
     }

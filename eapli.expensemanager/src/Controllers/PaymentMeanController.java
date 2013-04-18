@@ -6,6 +6,7 @@ package Controllers;
 
 import Model.PaymentMean;
 import Persistence.PaymentMeanRepository;
+import java.util.List;
 
 /**
  *
@@ -13,16 +14,14 @@ import Persistence.PaymentMeanRepository;
  * @author i111114 
  */
 public class PaymentMeanController {
-     public void registerPaymentMean(String mean) {
-        PaymentMean payMean = new PaymentMean(mean);
+     public void registerPaymentMean(String desc,String mean) {
+        PaymentMean payMean = new PaymentMean(desc, mean);
         PaymentMeanRepository repo = new PaymentMeanRepository();
         repo.save(payMean);
     }
     
-    public void listPaymentMean(){
-        
-       PaymentMeanRepository repo = new PaymentMeanRepository();
-       System.out.println(repo.getAllPaymentMean());
+    public List<PaymentMean> listPaymentMean(){
+        return new PaymentMeanRepository().getAllPaymentMean();
        
     }
 }
