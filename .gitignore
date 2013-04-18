@@ -1,8 +1,10 @@
 
 
 #Ignorar build
-/eapli.expensemanager/build/
-/eapli.expensemanager/nbproject/private/
-/eapli.util/nbproject/private/
-/eapli.expensemanager/dist/
-/eapli.expensemanager/build/built-jar.properties
+eapli.expensemanager/build/
+eapli.expensemanager/nbproject/private/
+eapli.expensemanager/dist/
+eapli.util/nbproject/private/
+eapli.util/dist/
+eapli.util/build/
+
