@@ -17,9 +17,10 @@ public class RegisterExpenseTypeUI {
         System.out.println("* * *  REGISTER AN EXPENSE TYPE  * * *\n");
         
         String what = Console.readLine("Tipo:");
+        String descrition = Console.readLine("Description:");
         
         ExpenseTypeController controller = new ExpenseTypeController();
-        controller.registerExpenseType(what);
+        controller.registerExpenseType(descrition,what);
         
         System.out.println("expense type recorded.");
     }
