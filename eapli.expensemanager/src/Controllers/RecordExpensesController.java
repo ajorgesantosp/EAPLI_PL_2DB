@@ -65,6 +65,7 @@ public class RecordExpensesController extends BaseController{
     }
      
     public void createExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMean pM) {
+        
         Expense expense = new Expense(what, date, amount, expType, pM);
         
         ExpenseRepository repo = new ExpenseRepository();
