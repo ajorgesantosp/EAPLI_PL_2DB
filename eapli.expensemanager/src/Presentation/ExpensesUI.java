@@ -6,7 +6,7 @@ package Presentation;
 
 import Controllers.BaseController;
 import Model.Expense;
-import Controllers.ExpensesController;
+import Controllers.RecordExpensesController;
 import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.List;
@@ -22,9 +22,9 @@ public class ExpensesUI extends BaseUI {
     BigDecimal amount;
     String description;
 
-    ExpensesController ec;
+    RecordExpensesController ec;
     public ExpensesUI() {
-        ec=new ExpensesController();
+        ec=new RecordExpensesController();
     }
 
     public void doShow() {
@@ -50,13 +50,13 @@ public class ExpensesUI extends BaseUI {
 
                     return;
                 case 1:
-                    lastMonthExpensesLoop();
+                    //lastMonthExpensesLoop();
                     break;
                 case 2:
-                    ListExpenditures();
+                    //ListExpenditures();
                     break;
                 case 3:
-                    getWeeklyExpenses();
+                    //getWeeklyExpenses();
                     break;
             }
         } while (option != 0);
@@ -64,6 +64,7 @@ public class ExpensesUI extends BaseUI {
 
     }
 
+    /*
     public void lastMonthExpensesLoop() {
 
 
@@ -82,7 +83,8 @@ public class ExpensesUI extends BaseUI {
 
 
     }
-
+    */
+    /*
     public void ListExpenditures() {
         System.out.println("* * *  SHOW LIST EXPENDITURES  * * *\n");
 
@@ -103,7 +105,8 @@ public class ExpensesUI extends BaseUI {
         sc.nextLine();
 
     }
-    
+    */
+    /*
     public void getWeeklyExpenses(){
         System.out.println("* * *  SHOW WEEKLY EXPENDITURES  * * *\n");
 
@@ -120,7 +123,7 @@ public class ExpensesUI extends BaseUI {
         Scanner sc = new Scanner(System.in);
         sc.nextLine();
     }
-
+    */
     @Override
     protected BaseController getController() {
         return ec;
