@@ -76,6 +76,7 @@ public class RegisterExpenseController extends BaseController {
 
         Expense expense = new Expense(what, date, amount, expType, pM);
         
+        //Lancar exception
         if(expense!=null){
             RecordExpense repo = new RecordExpense();
             repo.register(expense);
