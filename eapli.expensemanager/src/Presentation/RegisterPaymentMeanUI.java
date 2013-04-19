@@ -23,6 +23,9 @@ public class RegisterPaymentMeanUI {
         PaymentMeanController controller = new PaymentMeanController();
         controller.registerPaymentMean(desc, payMean);
         
-        System.out.println("payment mean recorded.");
+        System.out.println("Insert a valid Payment mean"); 
+        
+        
+        
     }
 }
