@@ -97,9 +97,10 @@ public class ExpensesUI extends BaseUI {
         for (int i = 0; i < aExp.size(); i++) {
 
             System.out.println("<--- " + (i + 1) + "º Expense --->");
-            System.out.println("Amount : " + aExp.get(i).getAmount().doubleValue() + "");
+            aExp.get(i).expenseToString();
+            /*System.out.println("Amount : " + aExp.get(i).getAmount().doubleValue() + "");
             System.out.println("Description : " + aExp.get(i).getDescription() + "");
-            System.out.println("Date : " + aExp.get(i).getDate()+ "\n");
+            System.out.println("Date : " + aExp.get(i).getDate()+ "\n");*/
         }
 
         System.out.println("Press Enter to continue.");
@@ -109,13 +110,12 @@ public class ExpensesUI extends BaseUI {
     }
     
     public void getWeeklyExpenses(){
-        System.out.println("* * *  SHOW WEEKLY EXPENDITURES  * * *\n");
+        System.out.println("* * *  SHOW CURRENT WEEK EXPENDITURES  * * *\n");
 
         
 
         List<Expense> l = ec.getWeeklyExpenses();
-        System.out.println("* * *  Show Current Week Expensea  * * *\n");
-
+        
         for (int i = 0; i < l.size(); i++) {
             l.get(i).expenseToString();
 

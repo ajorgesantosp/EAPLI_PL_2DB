@@ -67,6 +67,10 @@ public class RegisterExpenseController extends BaseController{
      
     public void createExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMean pM) {
         
+        
+        // NAO GRAVAR DIRETAMENTE NO REPOSITORY. USAR O RecordExpense. ----------> RecordExpense.Register(Expense) <-----------
+        
+        
         Expense expense = new Expense(what, date, amount, expType, pM);
         
         ExpenseRepository repo = new ExpenseRepository();

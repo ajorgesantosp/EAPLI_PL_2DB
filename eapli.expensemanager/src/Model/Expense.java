@@ -40,6 +40,7 @@ public class Expense extends BaseType{
         this.mean = mean;
         this.amount = amount;
         this.type=type;
+        this.d=dateOccurred;
         
     }
     
@@ -118,6 +119,7 @@ public class Expense extends BaseType{
         
         int ano=this.d.getYear();
         //fix corrigir o bug no getYear do Date
+        if(ano<0)
         ano=ano+1900+1900;
 
         System.out.println("**********************************");

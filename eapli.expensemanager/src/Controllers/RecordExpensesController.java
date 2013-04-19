@@ -7,6 +7,7 @@ package Controllers;
 import Model.Expense;
 import Model.ExpenseType;
 import Model.PaymentMean;
+import Model.RecordExpense;
 import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
 import Persistence.PaymentMeanRepository;
@@ -68,7 +69,10 @@ public class RecordExpensesController extends BaseController{
         
         Expense expense = new Expense(what, date, amount, expType, pM);
         
-        ExpenseRepository repo = new ExpenseRepository();
-        repo.save(expense);
+        /*ExpenseRepository repo = new ExpenseRepository();
+        repo.save(expense);*/
+        
+        RecordExpense re=new RecordExpense();
+        re.register(expense);
     }
 }
