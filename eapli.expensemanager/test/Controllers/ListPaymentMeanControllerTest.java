@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -13,12 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author i110512
  * @author i111114
  */
-public class PaymentMeanControllerTest {
+public class ListPaymentMeanControllerTest {
     
-    public PaymentMeanControllerTest() {
+    public ListPaymentMeanControllerTest() {
     }
     
     @BeforeClass
@@ -37,18 +37,15 @@ public class PaymentMeanControllerTest {
     public void tearDown() {
     }
 
-    
-
     /**
-     * Test of registerPaymentMean method, of class PaymentMeanController.
+     * Test of listPaymentMean method, of class ListPaymentMeanController.
      */
-    @Test(expected=IllegalArgumentException.class)
-    public void testRegisterPaymentMean_empty() {
-        System.out.println("registerPaymentMean");
-        String description = "teste";
-        String mean = "";
-        PaymentMeanController instance = new PaymentMeanController();
-        instance.registerPaymentMean(description, mean);
+    @Test(expected = NullPointerException.class)
+    public void testListPaymentMean() {
+        System.out.println("listPaymentMean");
+        ListPaymentMeanController instance = new ListPaymentMeanController();
+        List expResult = null;
+        List result = instance.listPaymentMean();
         // TODO review the generated test code and remove the default call to fail.
         
     }

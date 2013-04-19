@@ -16,13 +16,13 @@ import java.util.List;
 // Register PaymentMean
 public class PaymentMeanController {
 
-    public boolean registerPaymentMean(String description, String mean) {
-        if (!mean.equals("")) {
+    public void registerPaymentMean(String description, String mean) {
+        if (mean.equals("")) {
+            throw new IllegalArgumentException();
+        } else {
             PaymentMean payMean = new PaymentMean(description, mean);
             PaymentMeanRepository repo = new PaymentMeanRepository();
             repo.save(payMean);
-            return true;
         }
-        return false;
     }
 }

@@ -21,13 +21,10 @@ public class RegisterPaymentMeanUI {
         String desc = Console.readLine("Description:");
         
         PaymentMeanController controller = new PaymentMeanController();
-        if(controller.registerPaymentMean(desc, payMean))
-        {
-           System.out.println("Payment mean recorded."); 
-        } else
-        {
-            System.out.println("Insert a valid Payment mean"); 
-        }
+        controller.registerPaymentMean(desc, payMean);
+        
+        System.out.println("Insert a valid Payment mean"); 
+        
         
         
     }

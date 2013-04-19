@@ -6,6 +6,7 @@ package Controllers;
 
 import Model.PaymentMean;
 import Persistence.PaymentMeanRepository;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,9 @@ import java.util.List;
  */
 public class ListPaymentMeanController {
        public List<PaymentMean> listPaymentMean(){
-        return new PaymentMeanRepository().getAllPaymentMean();
-       
+           List<PaymentMean> tmp = (new PaymentMeanRepository()).getAllPaymentMean();
+           if(tmp.isEmpty())
+               throw new NullPointerException();
+            return tmp;  
     }
 }
