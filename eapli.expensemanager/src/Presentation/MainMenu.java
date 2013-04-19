@@ -28,12 +28,13 @@ public class MainMenu{
         System.out.println("  EXPENSE MANAGER  ");
         System.out.println("===================\n");
 
-        System.out.println("1. Regi1"
-                + "ster an expense");
+        System.out.println("1. Register an expense");
         System.out.println("2. Add Expense Type");
         System.out.println("3. Register an Expense with Expense Type");
         System.out.println("4. Show expenses");
         System.out.println("5. List Expense Types");
+        System.out.println("6. Add Payment Mean");
+        System.out.println("7. List Payment Means");
         System.out.println("0. Exit\n\n");
         
         
@@ -64,6 +65,12 @@ public class MainMenu{
                  ListExpenseTypeUI listexp = new ListExpenseTypeUI();
                  listexp.mainLoop();
                  break;
+            case 6:
+                new RegisterPaymentMeanUI().mainLoop();
+                break;
+            case 7:
+                new ListPaymentMeanUI().mainLoop();
+                break;
         }
       }while(option!=0);
     }

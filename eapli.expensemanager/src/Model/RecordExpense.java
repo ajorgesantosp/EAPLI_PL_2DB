@@ -30,7 +30,7 @@ public class RecordExpense {
     }
 
     public void register(Expense exp) {
-        lista.add(exp);
+        //lista.add(exp);
         expr.save(exp);
 
     }
@@ -65,7 +65,11 @@ public class RecordExpense {
 
         for (int i = 0; i < lista.size(); i++) {
 
-            c.set(lista.get(i).getDate().getYear() + 1900 + 1900, lista.get(i).getDate().getMonth(), lista.get(i).getDate().getDate());
+            int ano=lista.get(i).getDate().getYear();
+            if(ano<0)
+                ano=ano+1900+1900;
+                
+            c.set(ano, lista.get(i).getDate().getMonth()-1, lista.get(i).getDate().getDate());
 
             Date current = c.getTime();
             if (current.compareTo(monday) >= 0 && current.compareTo(sunday) <= 0) {

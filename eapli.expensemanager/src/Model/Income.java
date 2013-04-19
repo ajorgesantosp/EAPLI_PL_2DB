@@ -35,6 +35,7 @@ public class Income {
         this.description = description;
         this.amount = amount;
         this.type=type;
+        this.d= dateOccurred;
         
     }
     
@@ -77,11 +78,12 @@ public class Income {
         return this.d;
     }
 
-    public void expenseToString() {
+    public void incomeToString() {
 
         
         int ano=this.d.getYear();
         //fix corrigir o bug no getYear do Date
+        if(ano>=2000 || ano <0)
         ano=ano+1900+1900;
 
         System.out.println("**********************************");
