@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controllers;
 
 import Model.Expense;
@@ -14,12 +10,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-
-/***
- *
+/**
  * @author nbento
+ * 
  */
-public class RegisterExpenseController extends BaseController{
+public class RegisterExpenseController extends BaseController {
 
     /**
      * @autor nbento
@@ -64,11 +59,11 @@ public class RegisterExpenseController extends BaseController{
 
         return paymentMeans;
     }
-     
+
     public void createExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMean pM) {
-        
+
         Expense expense = new Expense(what, date, amount, expType, pM);
-        
+
         RecordExpense repo = new RecordExpense();
         repo.register(expense);
     }
