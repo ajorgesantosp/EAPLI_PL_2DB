@@ -14,7 +14,8 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author i111114
+ * @author i110512
+ * @author i111114 
  */
 public class ListPaymentMeanControllerTest {
     
