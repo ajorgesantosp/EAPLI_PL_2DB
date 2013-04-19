@@ -8,7 +8,6 @@ import Model.Expense;
 import Model.ExpenseType;
 import Model.PaymentMean;
 import Model.RecordExpense;
-import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
 import Persistence.PaymentMeanRepository;
 import java.math.BigDecimal;
