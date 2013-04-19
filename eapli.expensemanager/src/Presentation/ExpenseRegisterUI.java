@@ -5,7 +5,7 @@
 package Presentation;
 
 import Model.ExpenseType;
-import Controllers.RecordExpensesController;
+import Controllers.RegisterExpenseController;
 import Model.PaymentMean;
 
 import java.math.BigDecimal;
@@ -42,7 +42,7 @@ class ExpenseRegisterUI {
         double value = in.nextDouble();
         BigDecimal amount = new BigDecimal(value);
         
-        RecordExpensesController controller = new RecordExpensesController();
+        RegisterExpenseController controller = new RegisterExpenseController();
         ArrayList<ExpenseType> listExpenseType = new ArrayList<ExpenseType>(controller.getExpenseType());
         ArrayList<PaymentMean> listPaymentMean = new ArrayList<PaymentMean>(controller.getPaymentMean());
         
