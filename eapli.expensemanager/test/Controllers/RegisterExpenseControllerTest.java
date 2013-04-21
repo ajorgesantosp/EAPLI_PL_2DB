@@ -50,6 +50,7 @@ public class RegisterExpenseControllerTest {
 
     /**
      * Teste verificar lista PaymentMean vazia
+     * @exception exception EmptyList
      */
     @Test(expected = eapli.exception.EmptyList.class)
     public void testGetPaymentMeanException() throws EmptyList{
