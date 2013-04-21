@@ -61,6 +61,7 @@ public class RegisterExpenseControllerTest {
     
     /**
      * Teste verifica se o obj quando null lança exception
+     * @exception  expetion EmptyList
      */
     @Test(expected = IllegalArgumentException.class)
     public void testCreateExpense() {
