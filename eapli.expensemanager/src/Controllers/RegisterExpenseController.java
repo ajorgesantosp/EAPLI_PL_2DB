@@ -14,7 +14,7 @@ import Persistence.*;
 
 /***
  * @author nbento
- *
+ * 
  */
 public class RegisterExpenseController extends BaseController {
 
@@ -71,6 +71,7 @@ public class RegisterExpenseController extends BaseController {
 
     /**
      * @autor nbento
+     * @return 
      */
     public void createExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMean pM) {
 
