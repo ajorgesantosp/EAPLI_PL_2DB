@@ -11,14 +11,15 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-/***
- * @author nbento
- * 
+/**
+ * *
+ * @autor 1110186 & 1110590
+ *
  */
 public class RegisterExpenseController extends BaseController {
 
     /**
-     * @autor nbento
+     * @autor 1110186 & 1110590
      * @return List com todos os tipos de despesas
      * @throws IllegalArgumentException, EmptyList
      */
@@ -31,10 +32,6 @@ public class RegisterExpenseController extends BaseController {
         //Lista completa dos tipos de despesas
         expenseTypes = expenseTypeRepository.getAllExpenseType();
 
-        if (expenseTypes == null) {
-            throw new IllegalArgumentException();
-        }
-
         if (expenseTypes.isEmpty()) {
             throw new EmptyList("Exception EmptyList");
         }
@@ -44,7 +41,7 @@ public class RegisterExpenseController extends BaseController {
     }
 
     /**
-     * @autor nbento
+     * @autor 1110186 & 1110590
      * @return List com todos os meios de pagamento
      * @throws IllegalArgumentException, EmptyList
      */
@@ -56,11 +53,7 @@ public class RegisterExpenseController extends BaseController {
 
         //Lista completa dos cartões de debito
         paymentMeans = payMeansRepository.getAllPaymentMean();
-
-        if (paymentMeans == null) {
-            throw new IllegalArgumentException();
-        }
-
+        
         if (paymentMeans.isEmpty()) {
             throw new EmptyList("Exception EmptyList");
         }
@@ -69,19 +62,14 @@ public class RegisterExpenseController extends BaseController {
     }
 
     /**
-     * @autor nbento
-     * @return 
+     * @autor 1110186 & 1110590
+     * @return
      */
     public void createExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMean pM) {
 
         Expense expense = new Expense(what, date, amount, expType, pM);
-        
-        //Lancar exception
-        if(expense!=null){
-            RecordExpense repo = new RecordExpense();
-            repo.register(expense);
-        } else {
-            throw new IllegalArgumentException();
-        }
+
+        RecordExpense repo = new RecordExpense();
+        repo.register(expense);
     }
 }
