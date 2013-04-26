@@ -50,6 +50,7 @@ public class RegisterExpenseControllerTest {
 
     /**
      * Teste verificar lista PaymentMean vazia
+     * @exception exception EmptyList
      */
     @Test(expected = eapli.exception.EmptyList.class)
     public void testGetPaymentMeanException() throws EmptyList{
@@ -60,6 +61,7 @@ public class RegisterExpenseControllerTest {
     
     /**
      * Teste verifica se o obj quando null lança exception
+     * @exception  expetion EmptyList
      */
     @Test(expected = IllegalArgumentException.class)
     public void testCreateExpense() {
