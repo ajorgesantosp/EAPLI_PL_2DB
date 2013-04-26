@@ -34,6 +34,7 @@ public class ExpenseType extends BaseType {
         this.type = type;
     }
 
+    @Override
     public String toString() {
         return type;
     }
@@ -51,7 +52,8 @@ public class ExpenseType extends BaseType {
 
         if (other instanceof ExpenseType) {
             ExpenseType that = (ExpenseType) other;
-            result = (this.id == that.id && this.description.equalsIgnoreCase(that.description) && this.type.equalsIgnoreCase(that.type));
+            result = (this.description.equalsIgnoreCase(that.description) 
+                    && this.type.equalsIgnoreCase(that.type));
         }
 
         return result;

@@ -49,7 +49,8 @@ public class PaymentMean extends BaseType {
 
         if (other instanceof PaymentMean) {
             PaymentMean that = (PaymentMean) other;
-            result = (this.id == that.id && this.description.equalsIgnoreCase(that.description) && this.mean.equalsIgnoreCase(that.mean));
+            result = (this.description.equalsIgnoreCase(that.description) 
+                    && this.mean.equalsIgnoreCase(that.mean));
         }
 
         return result;
