@@ -2,7 +2,7 @@ package eapli.exception;
 
 /**
  *
- * @author nbento
+ * @autor 1110186 & 1110590
  */
 public class EmptyList extends Exception{
     
