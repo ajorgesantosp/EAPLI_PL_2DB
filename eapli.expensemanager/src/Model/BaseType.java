@@ -8,7 +8,7 @@ package Model;
  *
  * @author Pedro
  */
-public class BaseType {
+public abstract class BaseType {
     
     int id;
     
@@ -47,6 +47,22 @@ public class BaseType {
         this.description = description;
     }
 
-    
+    /**
+     * Comparação de objectos -> Metodo abstracto que deverá ser implementado nas classes filho
+     * 
+     * @autor 1110186 & 1110590
+     * @param other - Objecto a ser comparado
+     * @return True -> Objectos iguais | False -> Objectos diferentes
+     */
+    @Override
+    public abstract boolean equals(Object other);
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 71 * hash + this.id;
+        hash = 71 * hash + (this.description != null ? this.description.hashCode() : 0);
+        return hash;
+    }
     
 }
