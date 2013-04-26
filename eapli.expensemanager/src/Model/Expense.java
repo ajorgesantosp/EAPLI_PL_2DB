@@ -63,7 +63,7 @@ public class Expense extends BaseType {
      * Comparação de objectos
      * 
      * @autor 1110186 & 1110590
-     * @param other - Objecto a ser comparado
+     * @param other - Objecto a comparar
      * @return True -> Objectos iguais | False -> Objectos diferentes
      */
     @Override
