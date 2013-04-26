@@ -7,6 +7,7 @@ import Model.RecordExpense;
 import Persistence.ExpenseTypeRepository;
 import Persistence.PaymentMeanRepository;
 import eapli.exception.EmptyList;
+import eapli.exception.InvalidValue;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -66,10 +67,14 @@ public class RegisterExpenseController extends BaseController {
      * @return
      */
     public void createExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMean pM) {
+        try {
+            Expense expense = new Expense(what, date, amount, expType, pM);
 
-        Expense expense = new Expense(what, date, amount, expType, pM);
-
-        RecordExpense repo = new RecordExpense();
-        repo.register(expense);
+            RecordExpense repo = new RecordExpense();
+            repo.register(expense);
+        } catch (InvalidValue ex) {
+            System.err.println(ex.getMessage());
+        }
     }
+
 }
