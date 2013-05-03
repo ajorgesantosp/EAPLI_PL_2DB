@@ -4,12 +4,12 @@
  */
 package Persistence;
 import Model.*;
-import java.util.List;
+
 /**
+ * Interface de registo de despesas
  *
- * @author losa
+ * @autor 1110186 & 1110590
  */
 public interface IExpenseRepository {
-    void save(Expense exp);
-  //  List<Expense> getAllExpenses();        
+    void save(Expense exp);        
 }
