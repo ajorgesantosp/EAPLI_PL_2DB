@@ -36,6 +36,17 @@ public class PaymentMeanRepository implements IPaymentMeanRepository{
         return null;
     }
     
+    public void showAll(){
+        if(!listPaymentMean.isEmpty()){
+            for(PaymentMean o : listPaymentMean){
+                o.toString();
+            } 
+        }else{
+            System.out.println("The Repository is empty!");
+        }
+    }
+    
+    
     public List ListExpenseTypes(){
         
      //    for(Object o : listExpenseType){
