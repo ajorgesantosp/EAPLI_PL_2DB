@@ -1,10 +1,11 @@
 
-
 #Ignorar build
-eapli.expensemanager/build/
-eapli.expensemanager/nbproject/private/
-eapli.expensemanager/dist/
-eapli.util/nbproject/private/
-eapli.util/dist/
-eapli.util/build/
+/eapli.expensemanager/build/
+/eapli.expensemanager/nbproject/private/
+/eapli.expensemanager/nbproject/project.properties
+/eapli.expensemanager/dist/
+/eapli.util/nbproject/private/
+/eapli.util/nbproject/project.properties
+/eapli.util/dist/
+/eapli.util/build/
 
