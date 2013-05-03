@@ -14,4 +14,5 @@ import Model.PaymentMean;
 public interface IPaymentMeanRepository {
     void save(PaymentMean payMean);
     PaymentMean find(String name);
+    void showAll();
 }
