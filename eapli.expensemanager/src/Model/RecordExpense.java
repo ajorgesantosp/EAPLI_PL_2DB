@@ -4,7 +4,7 @@
  */
 package Model;
 
-import Persistence.ExpenseRepository;
+import Persistence.inMemory.ExpenseRepository;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;

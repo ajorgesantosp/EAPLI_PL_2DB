@@ -2,38 +2,34 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Persistence;
+package Persistence.inMemory;
 
 import Model.*;
-import java.math.BigDecimal;
+import Persistence.IExpenseRepository;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
+ * Classe Repositorio em memoria de despesas
  *
- * @author losa
+ * @autor 1110186 & 1110590
  */
 public class ExpenseRepository implements IExpenseRepository {
-    // class member
 
     private static List<Expense> listExpense = new ArrayList<Expense>();
 
     public ExpenseRepository() {
     }
 
+    @Override
     public void save(Expense exp) {
         if (exp == null) {
             throw new IllegalArgumentException();
         }
         listExpense.add(exp);
-
     }
 
-    /**
-     * return the last Expense
-     */
+    
     public Expense findLast() {
 
         if (listExpense.isEmpty()) {
@@ -45,7 +41,6 @@ public class ExpenseRepository implements IExpenseRepository {
         }
     }
 
-   
     public List<Expense> getList() {
         List<Expense> aExp = listExpense;
         return aExp;
