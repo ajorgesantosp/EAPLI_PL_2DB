@@ -6,7 +6,7 @@ package eapli.bootstrap;
 
 import Model.Expense;
 import Model.PaymentMean;
-import Persistence.ExpenseRepository;
+import Persistence.inMemory.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
 import Model.ExpenseType;
 import Persistence.PaymentMeanRepository;
