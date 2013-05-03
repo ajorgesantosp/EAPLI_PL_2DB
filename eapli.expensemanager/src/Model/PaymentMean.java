@@ -4,6 +4,7 @@
  */
 package Model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 
 /**
@@ -11,9 +12,12 @@ import javax.persistence.Entity;
  * @author i101068
  */
 @Entity
-public class PaymentMean extends BaseType {
+public class PaymentMean extends BaseType{
 
     private String mean;
+
+    public PaymentMean() {
+    }
 
     public PaymentMean(String description, String mean) {
         super(description);
