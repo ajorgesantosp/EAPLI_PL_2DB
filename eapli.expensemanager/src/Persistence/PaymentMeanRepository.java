@@ -25,6 +25,28 @@ public class PaymentMeanRepository implements IPaymentMeanRepository{
         
     }
     
+    public PaymentMean find(String pay)
+    {
+        for(PaymentMean o : listPaymentMean){
+            if(o.getMean().equals(pay)) {
+                return o;
+            }
+        }
+        System.out.println("PaymentMean "+pay+"not found!");
+        return null;
+    }
+    
+    public void showAll(){
+        if(!listPaymentMean.isEmpty()){
+            for(PaymentMean o : listPaymentMean){
+                o.toString();
+            } 
+        }else{
+            System.out.println("The Repository is empty!");
+        }
+    }
+    
+    
     public List ListExpenseTypes(){
         
      //    for(Object o : listExpenseType){

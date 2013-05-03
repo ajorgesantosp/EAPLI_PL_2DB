@@ -4,10 +4,13 @@
  */
 package Model;
 
+import javax.persistence.Entity;
+
 /**
  *
  * @author i101068
  */
+@Entity
 public class PaymentMean extends BaseType {
 
     private String mean;

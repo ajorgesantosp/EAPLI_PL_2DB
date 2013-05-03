@@ -4,12 +4,17 @@
  */
 package Model;
 
+import javax.persistence.Entity;
+import javax.persistence.Entity;
+
 /**
  *
  * @author dg5s5dfsd5fs5d
  */
+@Entity
 public class ExpenseType extends BaseType {
 
+    
     private String type;
 
     protected ExpenseType() {

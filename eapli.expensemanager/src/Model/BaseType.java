@@ -4,12 +4,19 @@
  */
 package Model;
 
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
 /**
  *
  * @author Pedro
  */
+@Entity
 public abstract class BaseType {
     
+   @Id 
+   @GeneratedValue        
     int id;
     
     String description;

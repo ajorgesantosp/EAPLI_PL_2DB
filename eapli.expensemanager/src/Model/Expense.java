@@ -3,12 +3,14 @@ package Model;
 import eapli.exception.InvalidValue;
 import java.math.BigDecimal;
 import java.util.Date;
+import javax.persistence.Entity;
 
 /**
  * Classe de despesas
  *
  * @autor 1110186 & 1110590
  */
+@Entity
 public class Expense extends BaseType {
 
     private BigDecimal amount;
