@@ -12,5 +12,6 @@ import Model.PaymentMean;
  * @author i111114
  */
 public interface IPaymentMeanRepository {
-    void save(PaymentMean expType);
+    void save(PaymentMean payMean);
+    PaymentMean find(String name);
 }
