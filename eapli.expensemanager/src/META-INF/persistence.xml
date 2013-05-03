@@ -5,6 +5,7 @@
     <class>Model.BaseType</class>
     <class>Model.Expense</class>
     <class>Model.ExpenseType</class>
+    <class>Model.PaymentMean</class>
     <properties>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
       <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
