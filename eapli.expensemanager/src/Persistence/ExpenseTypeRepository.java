@@ -36,6 +36,16 @@ public class ExpenseTypeRepository implements IExpenseTypeRepository {
       return listExpenseType;
     }
     
+       public ExpenseType FindExpenseTypes(String nome) {
+        
+            for(ExpenseType o : listExpenseType){
+                if(o.getType().equals(nome)){
+                    return o;
+                }  
+            }
+            return null;
+        }
+    
     /**
      * @autor nbentoneves
      * 
