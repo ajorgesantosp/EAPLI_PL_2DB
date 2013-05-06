@@ -5,7 +5,7 @@
 package Persistence.inMemory;
 
 import Model.*;
-import Persistence.IExpenseRepository;
+import Persistence.Interfaces.IExpenseRepository;
 import java.util.ArrayList;
 import java.util.List;
 
