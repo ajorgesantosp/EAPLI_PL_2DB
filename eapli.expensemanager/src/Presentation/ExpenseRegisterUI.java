@@ -17,7 +17,7 @@ import java.util.Scanner;
 class ExpenseRegisterUI {
 
     private static Scanner in = new Scanner(System.in);
-    //Teste
+    
     public void mainLoop() {
         try {
             System.out.println("* * *  REGISTER AN EXPENSE  * * *\n");
