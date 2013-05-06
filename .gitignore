@@ -5,6 +5,5 @@
 /eapli.expensemanager/dist
 /eapli.util/nbproject/private
 /eapli.util/nbproject/project.properties
-/eapli.util/dist/
-/eapli.util/build/
-
+/eapli.util/dist
+/eapli.util/build
