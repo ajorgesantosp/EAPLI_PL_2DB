@@ -5,7 +5,7 @@
 package Persistence.JPA;
 
 import Model.Expense;
-import Persistence.IExpenseRepository;
+import Persistence.Interfaces.IExpenseRepository;
 import javax.persistence.*;
 
 /**
