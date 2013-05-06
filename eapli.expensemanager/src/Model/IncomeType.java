@@ -1,39 +1,21 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Model;
 
 /**
- *
+ * @change 1110186
  * @author i100905
  */
 public class IncomeType {
     
     private String type;
-
+    private String description;
+    
     protected IncomeType() {}
 
-    public IncomeType(String type) {
+    public IncomeType(String type, String description) {
         this.type = type;
-        }
-    
-    /**
-     * @return the type
-     */
-    public String getType() {
-        return type;
-    }
-
-    /**
-     * @param type the type to set
-     */
-    public void setType(String type) {
-        this.type = type;
+        this.description = description;
     }
     
-    public String toString(){
-            return type;
-    }
 }
 

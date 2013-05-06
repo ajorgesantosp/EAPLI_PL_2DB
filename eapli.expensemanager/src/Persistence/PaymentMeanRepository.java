@@ -4,6 +4,7 @@
  */
 package Persistence;
 
+import Persistence.Interfaces.IPaymentMeanRepository;
 import Model.PaymentMean;
 import java.util.ArrayList;
 import java.util.List;
