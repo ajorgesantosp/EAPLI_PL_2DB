@@ -17,7 +17,7 @@ public class IncomeType {
         this.description = description;
     }
     
-        /**
+    /**
      * Comparação de objectos
      *
      * @autor 1110186 & 1110590
@@ -31,7 +31,7 @@ public class IncomeType {
         if (other instanceof IncomeType) {
             IncomeType that = (IncomeType) other;
             result = (this.description.equalsIgnoreCase(that.description)
-                    && this.type.equalsIgnoreCase(that.type));
+                    && this.getType().equalsIgnoreCase(that.getType()));
         }
 
         return result;
@@ -40,9 +40,16 @@ public class IncomeType {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 59 * hash + (this.type != null ? this.type.hashCode() : 0);
+        hash = 59 * hash + (this.getType() != null ? this.getType().hashCode() : 0);
         hash = 59 * hash + (this.description != null ? this.description.hashCode() : 0);
         return hash;
+    }
+
+    /**
+     * @return the type
+     */
+    public String getType() {
+        return type;
     }
     
 }
