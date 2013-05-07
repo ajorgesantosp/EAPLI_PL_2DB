@@ -8,6 +8,7 @@ import Model.*;
 import Persistence.Interfaces.IExpenseRepository;
 import java.util.ArrayList;
 import java.util.List;
+import eapli.exception.*;
 
 /**
  * Classe Repositorio em memoria de despesas
@@ -30,19 +31,22 @@ public class ExpenseRepository implements IExpenseRepository {
     }
 
     
-    public Expense findLast() {
+    public Expense findLast() throws EmptyList {
 
         if (listExpense.isEmpty()) {
-            System.out.println(" No Expense recorded!");
-            return null;
+            throw new EmptyList("Exception EmptyList");
         } else {
             Expense exp = listExpense.get(listExpense.size() - 1);
             return exp;
         }
     }
 
-    public List<Expense> getList() {
+    public List<Expense> getList() throws EmptyList {
         List<Expense> aExp = listExpense;
+        if(aExp.isEmpty()){
+            throw new EmptyList("Exception EmptyList");
+        }
+        
         return aExp;
     }
     
