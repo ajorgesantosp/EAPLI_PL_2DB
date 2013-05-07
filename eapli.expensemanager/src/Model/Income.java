@@ -4,7 +4,6 @@
  */
 package Model;
 
-import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -39,31 +38,6 @@ public class Income {
         
     }
     
-    public Income(String description, Date dateOccurred, BigDecimal amount) {
-        if (description == null || dateOccurred == null || amount == null) {
-            throw new IllegalArgumentException();
-        }
-        // cannot record a negative expense or a zero EUR expense
-        if (amount.signum() == -1 || amount.signum() == 0) {
-            throw new IllegalArgumentException();
-        }
-        this.description = description;
-        this.amount = amount;
-        this.d = dateOccurred;
-    }
-    
-    public Income( String description, int year, int month, int day, BigDecimal amount) {
-        this( description, DateTime.newDate(year, month, day), amount);
-    }
-    
-   
-    
-    public Income( String description, int year, int month, int day, BigDecimal amount,IncomeType type) {
-        this( description, DateTime.newDate(year, month, day), amount);
-        this.type=type;
-    }
-    
-    
     public BigDecimal getAmount() {
         return amount;
     }
@@ -94,4 +68,36 @@ public class Income {
 
     }
    
+        /**
+     * Comparação de objectos
+     *
+     * @autor 1110186 & 1110590
+     * @param other - Objecto a comparar
+     * @return True -> Objectos iguais | False -> Objectos diferentes
+     */
+    @Override
+    public boolean equals(Object other) {
+        boolean result = false;
+
+        if (other instanceof Income) {
+            Income that = (Income) other;
+            result = (this.description.equalsIgnoreCase(that.description)
+                    && this.d.equals(that.d)
+                    && this.amount == that.amount
+                    && this.type.equals(that.type));
+        }
+
+        return result;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + (this.description != null ? this.description.hashCode() : 0);
+        hash = 29 * hash + (this.amount != null ? this.amount.hashCode() : 0);
+        hash = 29 * hash + (this.type != null ? this.type.hashCode() : 0);
+        hash = 29 * hash + (this.d != null ? this.d.hashCode() : 0);
+        return hash;
+    }
+    
 }
