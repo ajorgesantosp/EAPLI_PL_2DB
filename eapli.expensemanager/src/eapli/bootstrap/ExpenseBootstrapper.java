@@ -36,6 +36,8 @@ public class ExpenseBootstrapper {
             ExpenseTypeRepository repo3 = new ExpenseTypeRepository();
             repo3.save(new ExpenseType("Despesas de alimentação", "Alimentação"));
             repo3.save(new ExpenseType("Despesas de transportes", "Transportes"));
+            repo3.save(new ExpenseType("Despesas de vestuario", "Vestuario"));
+            repo3.save(new ExpenseType("Despesas de lazer", "Lazer"));
         } catch (InvalidValue ex) {
             System.err.println(ex.getMessage());
         }
