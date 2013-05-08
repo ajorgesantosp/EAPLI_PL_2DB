@@ -36,6 +36,7 @@ public class MainMenu{
         System.out.println("6. Add Payment Mean");
         System.out.println("7. List Payment Means");
         System.out.println("8. Add Income Type");
+        System.out.println("9. Consult Month Expenses");
         System.out.println("0. Exit\n\n");
         
         option = Console.readInteger("Please choose a option");
@@ -73,6 +74,11 @@ public class MainMenu{
                 InsertIncomeTypeUI incomeType = new InsertIncomeTypeUI();
                 incomeType.mainLoop();
                 break;
+            case 9:
+                ConsultMonthExpensesUI consultMonth=new ConsultMonthExpensesUI();
+                consultMonth.mainLoop();
+                break;
+        
         }
       }while(option!=0);
     }
