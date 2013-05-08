@@ -43,7 +43,8 @@ public class ConsultMonthExpensesUI {
             for(int i=0;i<expType.size();i++){
                 for(int j=0;j<exp.size();j++){
                     if(expType.get(i).getType().equalsIgnoreCase(exp.get(j).getType().getType())){
-                        exp.get(j).toString();
+                        System.out.println("Tipo de despesa:%s\n"+expType.get(i).getType());
+                        exp.get(j).expenseToString();
                     }
                 }
             }
