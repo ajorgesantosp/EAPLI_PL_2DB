@@ -36,7 +36,7 @@ public class ConsultMonthExpensesUI {
             RegisterExpenseController expTypeController=new RegisterExpenseController();
             List<Expense> exp;
             List<ExpenseType> expType;
-            
+            //alterar para comparable
             exp=consultController.getMonthExpenses(MonthNumber, YearNumber);
             expType=expTypeController.getExpenseType();
             System.out.println("\n* * *  Show Month Expense  * * *\n");
