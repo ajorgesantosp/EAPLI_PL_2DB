@@ -4,8 +4,6 @@
  */
 package Presentation;
 
-import Controllers.BaseController;
-import Model.ExpenseType;
 import eapli.util.Console;
 
 /**
@@ -30,7 +28,7 @@ public class MainMenu{
 
         System.out.println("1. Register an expense");
         System.out.println("2. Add Expense Type");
-        System.out.println("3. Register an Expense with Expense Type");
+        System.out.println("3. Register an income");
         System.out.println("4. Show expenses");
         System.out.println("5. List Expense Types");
         System.out.println("6. Add Payment Mean");
@@ -52,8 +50,6 @@ public class MainMenu{
                 uitype.mainLoop();
                 break;
             case 3:
-                RegisterExpenseTypeUI uitypes = new RegisterExpenseTypeUI();
-                uitypes.mainLoop();
                 break;
             case 4:
                 ExpensesUI exp = new ExpensesUI();
