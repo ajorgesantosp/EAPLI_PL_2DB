@@ -48,6 +48,10 @@ public class Expense extends BaseType {
     public Date getDate() {
         return this.d;
     }
+    
+    public ExpenseType getType() {
+        return type;
+    }
 
     public void expenseToString() {
 
@@ -80,7 +84,7 @@ public class Expense extends BaseType {
                     && this.d.equals(that.d)
                     && this.amount == that.amount
                     && this.mean.equals(that.mean)
-                    && this.type.equals(that.type));
+                    && this.getType().equals(that.getType()));
         }
 
         return result;
@@ -90,9 +94,11 @@ public class Expense extends BaseType {
     public int hashCode() {
         int hash = 5;
         hash = 79 * hash + (this.amount != null ? this.amount.hashCode() : 0);
-        hash = 79 * hash + (this.type != null ? this.type.hashCode() : 0);
+        hash = 79 * hash + (this.getType() != null ? this.getType().hashCode() : 0);
         hash = 79 * hash + (this.mean != null ? this.mean.hashCode() : 0);
         hash = 79 * hash + (this.d != null ? this.d.hashCode() : 0);
         return hash;
     }
+
+
 }

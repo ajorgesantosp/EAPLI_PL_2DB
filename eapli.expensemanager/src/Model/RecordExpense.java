@@ -5,6 +5,7 @@
 package Model;
 
 import Persistence.inMemory.ExpenseRepository;
+import eapli.exception.EmptyList;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -24,7 +25,7 @@ public class RecordExpense {
         //lista = new ArrayList<Expense>();
     }
 
-    public void loadRepository() {
+    public void loadRepository() throws EmptyList {
         lista = expr.getList();
 
     }

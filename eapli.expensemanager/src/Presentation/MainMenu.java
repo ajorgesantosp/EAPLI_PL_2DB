@@ -4,6 +4,8 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
+import Model.ExpenseType;
 import eapli.util.Console;
 
 /**
@@ -28,12 +30,13 @@ public class MainMenu{
 
         System.out.println("1. Register an expense");
         System.out.println("2. Add Expense Type");
-        System.out.println("3. Register an income");
+        System.out.println("3. Register an Expense with Expense Type");
         System.out.println("4. Show expenses");
         System.out.println("5. List Expense Types");
         System.out.println("6. Add Payment Mean");
         System.out.println("7. List Payment Means");
         System.out.println("8. Add Income Type");
+        System.out.println("9. Consult Month Expenses");
         System.out.println("0. Exit\n\n");
         
         option = Console.readInteger("Please choose a option");
@@ -50,6 +53,8 @@ public class MainMenu{
                 uitype.mainLoop();
                 break;
             case 3:
+                RegisterExpenseTypeUI uitypes = new RegisterExpenseTypeUI();
+                uitypes.mainLoop();
                 break;
             case 4:
                 ExpensesUI exp = new ExpensesUI();
@@ -69,6 +74,11 @@ public class MainMenu{
                 InsertIncomeTypeUI incomeType = new InsertIncomeTypeUI();
                 incomeType.mainLoop();
                 break;
+            case 9:
+                ConsultMonthExpensesUI consultMonth=new ConsultMonthExpensesUI();
+                consultMonth.mainLoop();
+                break;
+        
         }
       }while(option!=0);
     }

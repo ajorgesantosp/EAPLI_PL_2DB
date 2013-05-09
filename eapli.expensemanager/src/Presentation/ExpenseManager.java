@@ -9,6 +9,9 @@ import Presentation.MainMenu;
 import eapli.util.Math;
 import Persistence.*;
 import eapli.bootstrap.ExpenseBootstrapper;
+import eapli.exception.EmptyList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,7 +26,13 @@ public class ExpenseManager {
         
         ExpenseBootstrapper eb= new ExpenseBootstrapper();
         RecordExpense re=new RecordExpense();
-        re.loadRepository();
+        try {
+            re.loadRepository();
+        } catch (EmptyList ex) {
+            System.out.println(ex.getMessage());
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
         
         MainMenu menu = new MainMenu();
         menu.doShow();
