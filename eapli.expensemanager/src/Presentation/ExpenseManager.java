@@ -12,6 +12,7 @@ import eapli.bootstrap.ExpenseBootstrapper;
 import eapli.exception.EmptyList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -23,7 +24,7 @@ public class ExpenseManager {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+         EntityManager manager=PersistenceInit.init();
         ExpenseBootstrapper eb= new ExpenseBootstrapper();
         RecordExpense re=new RecordExpense();
         try {

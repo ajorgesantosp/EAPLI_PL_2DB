@@ -4,16 +4,20 @@
  */
 package Model;
 
+import java.io.Serializable;
 import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 /**
  *
  * @author Pedro
  */
 @Entity
-public abstract class BaseType {
+@Inheritance(strategy=InheritanceType.JOINED)
+public abstract class BaseType implements Serializable {
     
    @Id 
    @GeneratedValue        

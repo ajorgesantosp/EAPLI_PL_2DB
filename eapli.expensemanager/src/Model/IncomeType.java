@@ -1,14 +1,17 @@
 
 package Model;
 
+import javax.persistence.Entity;
+
 /**
  * @change 1110186
  * @author i100905
  */
-public class IncomeType {
+@Entity
+public class IncomeType extends BaseType{
     
     private String type;
-    private String description;
+    
     
     protected IncomeType() {}
 
@@ -26,8 +29,8 @@ public class IncomeType {
      */
     @Override
     public boolean equals(Object other) {
+        
         boolean result = false;
-
         if (other instanceof IncomeType) {
             IncomeType that = (IncomeType) other;
             result = (this.description.equalsIgnoreCase(that.description)
