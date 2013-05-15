@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class ConsultMonthExpensesUI {
     private Scanner in=new Scanner(System.in);
     
-    public void mainLoop() {
+    public void mainLoop() throws IllegalArgumentException {
         try {
             System.out.println("* * *  Consult Month Expenses  * * *\n");
             
@@ -36,28 +36,22 @@ public class ConsultMonthExpensesUI {
             RegisterExpenseController expTypeController=new RegisterExpenseController();
             List<Expense> exp;
             List<ExpenseType> expType;
-            //alterar para comparable
             exp=consultController.getMonthExpenses(MonthNumber, YearNumber);
             expType=expTypeController.getExpenseType();
             System.out.println("\n* * *  Show Month Expense  * * *\n");
             for(int i=0;i<expType.size();i++){
+                System.out.println("\n* * * "+expType.get(i).getType()+" * * *\n");
                 for(int j=0;j<exp.size();j++){
-                    if(expType.get(i).getType().equalsIgnoreCase(exp.get(j).getType().getType())){
-                        System.out.println("Tipo de despesa:"+expType.get(i).getType());
-                        exp.get(j).expenseToString();
+                        int x=ExpenseType.ExpenseTypeNameComparator.compare(expType.get(i), exp.get(j).getType());
+                        if(x==0){
+                            exp.get(j).expenseToString();
+                        }
                     }
                 }
-            }
-        } catch (IllegalArgumentException ex) {
-            System.err.println("Illegal Argument!");
-        } catch (EmptyList ex) {
+            } catch (EmptyList ex) {
             System.err.println("Expense Type List Empty");
-        }
-        
-        
-    
+            }
+
     }
-    
-    
-    
+  
 }
