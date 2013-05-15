@@ -5,7 +5,6 @@
 package Model;
 
 import javax.persistence.Entity;
-import javax.persistence.Entity;
 import java.util.Comparator;
 /**
  *
