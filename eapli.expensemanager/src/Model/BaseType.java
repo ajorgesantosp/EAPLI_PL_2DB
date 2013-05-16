@@ -21,7 +21,7 @@ public abstract class BaseType implements Serializable {
     
    @Id 
    @GeneratedValue        
-    int id;
+   int id;
     
     String description;
 

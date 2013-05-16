@@ -24,7 +24,8 @@ public class ExpenseManager {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-         EntityManager manager=PersistenceInit.init();
+        PersistenceFactory per=PersistenceFactory.getInstance();
+        
         ExpenseBootstrapper eb= new ExpenseBootstrapper();
         RecordExpense re=new RecordExpense();
         try {

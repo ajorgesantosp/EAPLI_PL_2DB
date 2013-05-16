@@ -6,6 +6,7 @@ package Persistence;
 
 import Persistence.Interfaces.IPaymentMeanRepository;
 import Model.PaymentMean;
+import Persistence.JPA.PaymentMeanRepositoryJPA;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,8 @@ public class PaymentMeanRepository implements IPaymentMeanRepository{
     {
         if (pay==null) throw new IllegalArgumentException();
         listPaymentMean.add(pay);
-        
+        PaymentMeanRepositoryJPA JPA = new PaymentMeanRepositoryJPA();
+        //JPA.save(pay);
     }
     
     public PaymentMean find(String pay)

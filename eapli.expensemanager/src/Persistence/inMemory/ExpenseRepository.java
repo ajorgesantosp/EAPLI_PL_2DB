@@ -6,6 +6,7 @@ package Persistence.inMemory;
 
 import Model.*;
 import Persistence.Interfaces.IExpenseRepository;
+import Persistence.JPA.ExpenseRepositoryJPA;
 import java.util.ArrayList;
 import java.util.List;
 import eapli.exception.*;
@@ -28,6 +29,8 @@ public class ExpenseRepository implements IExpenseRepository {
             throw new IllegalArgumentException();
         }
         listExpense.add(exp);
+        ExpenseRepositoryJPA JPA = new ExpenseRepositoryJPA();
+        JPA.save(exp);
     }
 
     
