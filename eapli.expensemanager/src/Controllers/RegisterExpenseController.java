@@ -5,7 +5,7 @@ import Model.ExpenseType;
 import Model.PaymentMean;
 import Model.RecordExpense;
 import Persistence.ExpenseTypeRepository;
-import Persistence.PaymentMeanRepository;
+import Persistence.inMemory.PaymentMeanRepository;
 import eapli.exception.EmptyList;
 import eapli.exception.InvalidValue;
 import java.math.BigDecimal;
