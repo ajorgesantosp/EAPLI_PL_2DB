@@ -4,8 +4,11 @@
  */
 package Model;
 
+import Persistence.ExpenseTypeRepository;
+import Persistence.Interfaces.IExpenseTypeRepository;
 import Persistence.inMemory.ExpenseRepository;
 import eapli.exception.EmptyList;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -98,7 +101,7 @@ public class RecordExpense {
 
         }
 
-
+        
         return monthExpense;
 
     }
@@ -113,4 +116,51 @@ public class RecordExpense {
             return exp;
         }
     }
+    
+    
+    /**
+     * @author 1100905 & 1070413
+     * @param year year of the month
+     * @param month the specific month
+     * @return List with expenses by type
+     */
+    public List<ExpenseTA> monthTypeAmount(int year, int month){
+        
+        List<Expense> monthExpense = new ArrayList<Expense>();
+        List<ExpenseTA> listExpensesTA = new ArrayList<ExpenseTA>();
+        List<ExpenseType> expenseTypes = new ArrayList<ExpenseType>();
+        
+        //Get expenses types
+        ExpenseTypeRepository extrp = new ExpenseTypeRepository();
+        expenseTypes = extrp.getAllExpenseType();
+  
+        //Get specific month
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getDate().getMonth() == month && lista.get(i).getDate().getYear() == year) {
+                monthExpense.add(lista.get(i));
+            }
+        }
+        
+        //Save total amount per type in the specific month
+        for (int i = 0; i < expenseTypes.size(); i++) {
+          BigDecimal total = new BigDecimal("0");
+          
+            for (int j = 0; j < monthExpense.size(); j++) {
+                if(monthExpense.get(j).getType()==expenseTypes.get(i)){
+                    total.add(monthExpense.get(j).getAmount());
+                }
+            }
+            
+            listExpensesTA.add(new ExpenseTA(expenseTypes.get(i), total));
+        }
+           
+        return listExpensesTA;
+    }
+    
+    
+    
+    
+    
+    
+    
 }
