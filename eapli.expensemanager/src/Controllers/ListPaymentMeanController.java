@@ -5,7 +5,7 @@
 package Controllers;
 
 import Model.PaymentMean;
-import Persistence.PaymentMeanRepository;
+import Persistence.inMemory.PaymentMeanRepository;
 import java.util.ArrayList;
 import java.util.List;
 

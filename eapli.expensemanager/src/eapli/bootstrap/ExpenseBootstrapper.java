@@ -9,7 +9,7 @@ import Model.PaymentMean;
 import Persistence.inMemory.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
 import Model.ExpenseType;
-import Persistence.PaymentMeanRepository;
+import Persistence.inMemory.PaymentMeanRepository;
 import eapli.exception.InvalidValue;
 import java.math.BigDecimal;
 import java.util.Date;
