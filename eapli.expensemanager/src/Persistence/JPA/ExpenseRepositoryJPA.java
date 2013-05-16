@@ -9,7 +9,6 @@ import Model.ExpenseType;
 import Model.PaymentMean;
 import Persistence.Interfaces.IExpenseRepository;
 import Persistence.PersistenceFactory;
-import Persistence.PersistenceInit;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;

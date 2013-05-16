@@ -10,7 +10,6 @@ import Persistence.Interfaces.IExpenseRepository;
 import Persistence.Interfaces.IPaymentMeanRepository;
 import Persistence.PaymentMeanRepository;
 import Persistence.PersistenceFactory;
-import Persistence.PersistenceInit;
 import javax.persistence.EntityManager;
 
 /**
