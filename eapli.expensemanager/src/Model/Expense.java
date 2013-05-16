@@ -15,7 +15,7 @@ import javax.persistence.Temporal;
  */
 @Entity
 public class Expense extends BaseType {
-
+    
     private BigDecimal amount;
     @ManyToOne (cascade = CascadeType.ALL)
     private ExpenseType type;
