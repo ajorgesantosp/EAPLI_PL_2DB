@@ -8,7 +8,7 @@ import Model.Expense;
 import Model.PaymentMean;
 import Persistence.Interfaces.IExpenseRepository;
 import Persistence.Interfaces.IPaymentMeanRepository;
-import Persistence.PaymentMeanRepository;
+import Persistence.inMemory.PaymentMeanRepository;
 import Persistence.PersistenceFactory;
 import Persistence.PersistenceInit;
 import javax.persistence.EntityManager;
