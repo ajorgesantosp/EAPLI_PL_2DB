@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
  * @author i101068
  */
 @Entity
-public class PaymentMean extends BaseType implements Serializable {
+public class PaymentMean extends BaseType implements Serializable{
 
     private String mean;
 
