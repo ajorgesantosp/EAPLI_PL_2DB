@@ -4,9 +4,7 @@
  */
 package Persistence.inMemory;
 
-import Persistence.Interfaces.IPaymentMeanRepository;
 import Model.PaymentMean;
-import Persistence.JPA.PaymentMeanRepositoryJPA;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,19 +13,21 @@ import java.util.List;
  * @author i110512
  * @author i111114 
  */
-public class PaymentMeanRepository implements IPaymentMeanRepository{
+public class PaymentMeanRepository implements Persistence.Interfaces.PaymentMeanRepository{
     private static List<PaymentMean> listPaymentMean= new ArrayList<PaymentMean>();
 
     public PaymentMeanRepository() {}
     
+    @Override
     public void save(PaymentMean pay)
     {
         if (pay==null) throw new IllegalArgumentException();
         listPaymentMean.add(pay);
-        PaymentMeanRepositoryJPA JPA = new PaymentMeanRepositoryJPA();
+        Persistence.JPA.PaymentMeanRepository JPA = new Persistence.JPA.PaymentMeanRepository();
         //JPA.save(pay);
     }
     
+    @Override
     public PaymentMean find(String pay)
     {
         for(PaymentMean o : listPaymentMean){

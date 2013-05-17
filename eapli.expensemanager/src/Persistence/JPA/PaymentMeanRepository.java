@@ -5,14 +5,12 @@
 package Persistence.JPA;
 
 import Model.PaymentMean;
-import Persistence.Interfaces.IPaymentMeanRepository;
-import Persistence.PersistenceFactory;
 
 /**
  *
  * @author renato
  */
-public class PaymentMeanRepositoryJPA implements IPaymentMeanRepository{
+public class PaymentMeanRepository implements Persistence.Interfaces.PaymentMeanRepository{
     
    
    

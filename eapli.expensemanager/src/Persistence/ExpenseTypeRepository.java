@@ -5,7 +5,6 @@
 package Persistence;
 
 import Model.ExpenseType;
-import Persistence.Interfaces.IExpenseTypeRepository;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +12,7 @@ import java.util.List;
  *
  * @author Emanuel
  */
-public class ExpenseTypeRepository implements IExpenseTypeRepository {
+public class ExpenseTypeRepository implements Persistence.Interfaces.ExpenseTypeRepository {
     
     private static List<ExpenseType> listExpenseType= new ArrayList<ExpenseType>();
 

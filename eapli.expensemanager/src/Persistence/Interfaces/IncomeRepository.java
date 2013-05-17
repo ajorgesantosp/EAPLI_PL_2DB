@@ -7,7 +7,7 @@ package Persistence.Interfaces;
 import Model.Income;
 
 
-public interface IIncomeRepository {
+public interface IncomeRepository {
     
     void save(Income inc);
     

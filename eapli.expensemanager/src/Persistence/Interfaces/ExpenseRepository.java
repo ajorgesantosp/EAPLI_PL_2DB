@@ -10,6 +10,6 @@ import Model.*;
  *
  * @autor 1110186 & 1110590
  */
-public interface IExpenseRepository {
+public interface ExpenseRepository {
     void save(Expense exp);        
 }

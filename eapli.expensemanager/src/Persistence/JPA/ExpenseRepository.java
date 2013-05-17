@@ -5,15 +5,13 @@
 package Persistence.JPA;
 
 import Model.Expense;
-import Persistence.Interfaces.IExpenseRepository;
-import Persistence.PersistenceFactory;
 
 /**
  * Classe Repositorio em memoria de despesas
  *
  * @autor 1110186 & 1110590
  */
-public class ExpenseRepositoryJPA implements IExpenseRepository{
+public class ExpenseRepository implements Persistence.Interfaces.ExpenseRepository{
     
     @Override
     public void save(Expense exp) {
