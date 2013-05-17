@@ -4,6 +4,7 @@
  */
 package Model;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +14,11 @@ import java.util.List;
  */
 public class Account {
     
-    double saldo;
+    BigDecimal saldo;
     String nomeOwner;
     int nConta;
     
-    List<Expense> listExpense;
+   
     List<Income> listIncome;
    
   
@@ -25,7 +26,7 @@ public class Account {
        
     }
     
-    void setSaldoInicial(double saldo){
+    void setSaldoInicial(BigDecimal saldo){
              
        // if(re.setSaldo(saldo))
        //     this.saldo=saldo;    
