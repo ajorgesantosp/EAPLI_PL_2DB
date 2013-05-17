@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Emanuel
  */
-public interface IExpenseTypeRepository {
+public interface ExpenseTypeRepository {
     void save(ExpenseType expType);
     ExpenseType FindExpenseTypes(String nome);
     List<ExpenseType> getAllExpenseType();

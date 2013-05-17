@@ -6,6 +6,7 @@ package Model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -56,7 +57,7 @@ public class PaymentMean extends BaseType implements Serializable{
 
         if (other instanceof PaymentMean) {
             PaymentMean that = (PaymentMean) other;
-            result = (this.description.equalsIgnoreCase(that.description) 
+            result = (this.description.equalsIgnoreCase(that.description)
                     && this.mean.equalsIgnoreCase(that.mean));
         }
 

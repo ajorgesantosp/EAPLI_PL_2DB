@@ -17,12 +17,15 @@ public class Account {
     BigDecimal saldo;
     String nomeOwner;
     int nConta;
+    BigDecimal bd,bD;
     
    
     List<Income> listIncome;
    
   
     Account(){
+        
+        
        
     }
     
@@ -32,4 +35,19 @@ public class Account {
        //     this.saldo=saldo;    
         
     }
+    
+   
+          public BigDecimal allCombined(){
+            for(Expense o : listExpense){
+                bd=bd.add(o.getAmount());
+            } 
+            for(Income i: listIncome){
+                bD=bD.add(i.getAmount());
+                
+            }  
+            bd.negate();
+            return bD.add(bd);
+        }
+    
+    
 }
