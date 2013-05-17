@@ -17,7 +17,7 @@ public class SavingsAccount extends Account {
     SavingsAccount(String ownerName, int id) {
         this.nomeOwner = ownerName;
         this.nConta = id;
-        this.listExpense = new ArrayList<Expense>();
+        
         this.listIncome = new ArrayList<Income>();
 
 

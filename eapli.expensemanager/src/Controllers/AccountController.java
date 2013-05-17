@@ -21,9 +21,8 @@ public class AccountController {
     
       public BigDecimal showBalance(){
         Account acc = new Account();
-        
-        
-        
-        return 0;
+       
+        return acc.getSaldo().add(acc.allCombined());
+       
     }
 }

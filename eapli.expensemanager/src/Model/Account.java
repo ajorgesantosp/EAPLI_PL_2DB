@@ -14,14 +14,14 @@ import java.util.List;
  */
 public class Account {
     
-    double saldo;
+    private BigDecimal saldo;
     String nomeOwner;
     int nConta;
     BigDecimal bd,bD;
     
-    List<Expense> listExpense;
-    List<Income> listIncome;
    
+    List<Income> listIncome;
+    List<Expense> listExpense;
   
     public Account(){
         
@@ -29,7 +29,7 @@ public class Account {
        
     }
     
-    void setSaldoInicial(double saldo){
+    void setSaldoInicial(BigDecimal saldo){
              
        // if(re.setSaldo(saldo))
        //     this.saldo=saldo;
@@ -48,6 +48,9 @@ public class Account {
             bd.negate();
             return bD.add(bd);
         }
+    public BigDecimal getSaldo() {
+        return saldo;
+    }
     
     
 }
