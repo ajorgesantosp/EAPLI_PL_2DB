@@ -4,19 +4,13 @@
  */
 package Persistence.JPA;
 
-import Model.Expense;
 import Model.PaymentMean;
-import Persistence.Interfaces.IExpenseRepository;
-import Persistence.Interfaces.IPaymentMeanRepository;
-import Persistence.inMemory.PaymentMeanRepository;
-import Persistence.PersistenceFactory;
-import javax.persistence.EntityManager;
 
 /**
  *
  * @author renato
  */
-public class PaymentMeanRepositoryJPA implements IPaymentMeanRepository{
+public class PaymentMeanRepository implements Persistence.Interfaces.PaymentMeanRepository{
     
    
    
@@ -32,11 +26,12 @@ public class PaymentMeanRepositoryJPA implements IPaymentMeanRepository{
 
     @Override
     public void save(PaymentMean payMean) {
+        /*
         PersistenceFactory per=PersistenceFactory.getInstance();
              
              per.manager.getTransaction().begin();    
              per.manager.merge(payMean);
-             per.manager.getTransaction().commit();
+             per.manager.getTransaction().commit();*/
     }
     
 }

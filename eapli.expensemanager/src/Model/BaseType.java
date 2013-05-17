@@ -16,23 +16,20 @@ import javax.persistence.InheritanceType;
  * @author Pedro
  */
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class BaseType implements Serializable {
-    
-   @Id 
-   @GeneratedValue        
-   int id;
-    
-    String description;
 
+    @Id
+    @GeneratedValue
+    int id;
+    String description;
     static int lastID;
-    
-    public BaseType(){
-        
-        }
-        
-    public BaseType(String description){
-        
+
+    public BaseType() {
+    }
+
+    public BaseType(String description) {
+
         if (description == null) {
             throw new IllegalArgumentException();
         }
@@ -41,9 +38,9 @@ public abstract class BaseType implements Serializable {
             throw new IllegalArgumentException();
         }
         lastID++;
-        this.id=lastID;
-        this.description=description;
-        
+        this.id = lastID;
+        this.description = description;
+
     }
 
     public String getDescription() {
@@ -59,8 +56,9 @@ public abstract class BaseType implements Serializable {
     }
 
     /**
-     * Comparação de objectos -> Metodo abstracto que deverá ser implementado nas classes filho
-     * 
+     * Comparação de objectos -> Metodo abstracto que deverá ser implementado
+     * nas classes filho
+     *
      * @autor 1110186 & 1110590
      * @param other - Objecto a ser comparado
      * @return True -> Objectos iguais | False -> Objectos diferentes
@@ -75,5 +73,4 @@ public abstract class BaseType implements Serializable {
         hash = 71 * hash + (this.description != null ? this.description.hashCode() : 0);
         return hash;
     }
-    
 }

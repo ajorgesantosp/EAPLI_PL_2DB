@@ -5,7 +5,6 @@
 package Persistence.inMemory;
 
 import Model.Income;
-import Persistence.Interfaces.IIncomeRepository;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ import java.util.List;
  *
  * @autor 1110186 & 1110590
  */
-public class IncomeRepository implements IIncomeRepository{
+public class IncomeRepository implements Persistence.Interfaces.IncomeRepository{
     
     private static List<Income> listIncome = new ArrayList<Income>();
     

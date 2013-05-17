@@ -1,4 +1,3 @@
-
 package Model;
 
 import javax.persistence.Entity;
@@ -8,18 +7,18 @@ import javax.persistence.Entity;
  * @author i100905
  */
 @Entity
-public class IncomeType extends BaseType{
-    
+public class IncomeType extends BaseType {
+
     private String type;
-    
-    
-    protected IncomeType() {}
+
+    protected IncomeType() {
+    }
 
     public IncomeType(String type, String description) {
         this.type = type;
         this.description = description;
     }
-    
+
     /**
      * Comparação de objectos
      *
@@ -29,7 +28,7 @@ public class IncomeType extends BaseType{
      */
     @Override
     public boolean equals(Object other) {
-        
+
         boolean result = false;
         if (other instanceof IncomeType) {
             IncomeType that = (IncomeType) other;
@@ -54,6 +53,4 @@ public class IncomeType extends BaseType{
     public String getType() {
         return type;
     }
-    
 }
-
