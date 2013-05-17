@@ -5,7 +5,6 @@
 package Model;
 
 import Persistence.ExpenseTypeRepository;
-import Persistence.Interfaces.IExpenseTypeRepository;
 import Persistence.inMemory.ExpenseRepository;
 import eapli.exception.EmptyList;
 import java.math.BigDecimal;
