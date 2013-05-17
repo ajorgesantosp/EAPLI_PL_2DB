@@ -16,43 +16,41 @@ import javax.persistence.Temporal;
  * @author i100905
  */
 @Entity
-public class Income extends BaseType{
-    
-   
-   
+public class Income extends BaseType {
+
     BigDecimal amount;
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     IncomeType type;
-    
     @Temporal(javax.persistence.TemporalType.DATE)
     Date d;
-    
-    protected Income() {}
-    
-    public Income( String description, Date dateOccurred, BigDecimal amount, IncomeType type) {
+
+    protected Income() {
+    }
+
+    public Income(String description, Date dateOccurred, BigDecimal amount, IncomeType type) {
         if (description == null || dateOccurred == null || amount == null || type == null) {
             throw new IllegalArgumentException();
         }
         // cannot record a negative expense or a zero EUR income
-        if (amount.signum() == -1 || amount.signum() ==  0) {
+        if (amount.signum() == -1 || amount.signum() == 0) {
             throw new IllegalArgumentException();
         }
         this.description = description;
         this.amount = amount;
-        this.type=type;
-        this.d= dateOccurred;
-        
+        this.type = type;
+        this.d = dateOccurred;
+
     }
-    
+
     public BigDecimal getAmount() {
         return amount;
     }
 
-    public String getDescription(){
+    public String getDescription() {
         return description;
     }
-    
-     public Date getDate() {
+
+    public Date getDate() {
 
 
         return this.d;
@@ -60,21 +58,22 @@ public class Income extends BaseType{
 
     public void incomeToString() {
 
-        
-        int ano=this.d.getYear();
+
+        int ano = this.d.getYear();
         //fix corrigir o bug no getYear do Date
-        if(ano>=2000 || ano <0)
-        ano=ano+1900+1900;
+        if (ano >= 2000 || ano < 0) {
+            ano = ano + 1900 + 1900;
+        }
 
         System.out.println("**********************************");
         System.out.println("Descriçao: " + this.description);
-        System.out.println("Data: " + this.d.getDate()+"/"+this.d.getMonth()+"/"+ano);
+        System.out.println("Data: " + this.d.getDate() + "/" + this.d.getMonth() + "/" + ano);
         System.out.println("Valor: " + this.getAmount().doubleValue());
         System.out.println("**********************************\n");
 
     }
-   
-        /**
+
+    /**
      * Comparação de objectos
      *
      * @autor 1110186 & 1110590
@@ -105,5 +104,4 @@ public class Income extends BaseType{
         hash = 29 * hash + (this.d != null ? this.d.hashCode() : 0);
         return hash;
     }
-    
 }
