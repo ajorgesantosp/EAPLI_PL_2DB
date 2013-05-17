@@ -5,7 +5,6 @@
 package Persistence;
 
 import Model.ExpenseType;
-import Model.ExpenseType;
 import Persistence.Interfaces.IExpenseTypeRepository;
 import java.util.ArrayList;
 import java.util.List;

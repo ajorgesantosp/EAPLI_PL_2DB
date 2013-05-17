@@ -3,10 +3,7 @@ package Model;
 import eapli.exception.InvalidValue;
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
+import javax.persistence.*;
 
 /**
  * Classe de despesas
@@ -15,11 +12,11 @@ import javax.persistence.Temporal;
  */
 @Entity
 public class Expense extends BaseType {
-
+    
     private BigDecimal amount;
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne
     private ExpenseType type;
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne
     private PaymentMean mean;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date d;

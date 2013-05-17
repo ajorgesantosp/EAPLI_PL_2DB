@@ -13,16 +13,19 @@ import javax.persistence.Persistence;
  * @author renato
  */
 public class PersistenceFactory {
-    private static PersistenceFactory instance = new PersistenceFactory();
-    public EntityManager manager;
+    //private static PersistenceFactory instance = new PersistenceFactory();
+    //public EntityManager manager;
     private PersistenceFactory()
 	{
-         EntityManagerFactory factory = Persistence.createEntityManagerFactory("eapli.expensemanagerPU");
-         manager = factory.createEntityManager();
-	System.out.println("PersistenceFactory(): Initializing Instance");
+         //EntityManagerFactory factory = Persistence.createEntityManagerFactory("eapli.expensemanagerPU");
+         //manager = factory.createEntityManager();
+	//System.out.println("PersistenceFactory(): Initializing Instance");
 	}
+    /*
     public static PersistenceFactory getInstance()
 	{    
-		return instance;
+		//return instance;
 	}
+    */
+
 }
