@@ -14,16 +14,16 @@ import java.util.List;
  */
 public class Account {
     
-    BigDecimal saldo;
+    private BigDecimal saldo;
     String nomeOwner;
     int nConta;
     BigDecimal bd,bD;
     
    
     List<Income> listIncome;
-   
+    List<Expense> listExpense;
   
-    Account(){
+    public Account(){
         
         
        
@@ -48,6 +48,9 @@ public class Account {
             bd.negate();
             return bD.add(bd);
         }
+    public BigDecimal getSaldo() {
+        return saldo;
+    }
     
     
 }
