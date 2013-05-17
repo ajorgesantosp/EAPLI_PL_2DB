@@ -21,15 +21,6 @@ public class AccountController {
     
       public BigDecimal showBalance(){
         Account acc = new Account();
-        List<Expense> expenses=expRepo.getListExpenditures();
-        List<Expense> aux;
-        aux = new ArrayList<Expense>();
-
-        for(int i=0;i<expenses.size();i++){
-            if((expenses.get(i).getDate().getMonth()==MonthNumber) && (expenses.get(i).getDate().getYear()==YearNumber)){
-                aux.add(expenses.get(i));
-            }
-        }
-        return aux; 
+        return 0;
     }
 }
