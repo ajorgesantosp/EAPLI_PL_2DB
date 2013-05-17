@@ -4,24 +4,29 @@
  */
 package Model;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Filipe
  */
 public class SavingsAccount extends Account {
+    private List<Saving> savings;
+    
+    public SavingsAccount(BigDecimal saldo, String nomeOwner, int nConta) {
+        //super(saldo, nomeOwner, nConta);
+        savings = new ArrayList<Saving>();
+    }
+    
+    public void addSaving(Saving s)
+    {
+        savings.add(s);
+    }
+    
 
     
 
-    SavingsAccount(String ownerName, int id) {
-        this.nomeOwner = ownerName;
-        this.nConta = id;
-        
-        this.listIncome = new ArrayList<Income>();
 
-
-        
-
-    }
 }
