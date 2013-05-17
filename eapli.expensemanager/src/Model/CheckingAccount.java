@@ -5,6 +5,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  */
 public class CheckingAccount extends Account {
 
-    
+     List<Expense> listExpense;
 
     CheckingAccount(String ownerName, int id) {
         this.nomeOwner = ownerName;
