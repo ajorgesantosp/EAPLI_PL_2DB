@@ -4,6 +4,7 @@
  */
 package Model;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,12 +17,15 @@ public class Account {
     double saldo;
     String nomeOwner;
     int nConta;
+    BigDecimal bd,bD;
     
     List<Expense> listExpense;
     List<Income> listIncome;
    
   
     Account(){
+        
+        
        
     }
     
@@ -31,4 +35,19 @@ public class Account {
        //     this.saldo=saldo;    
         
     }
+    
+   
+          public BigDecimal allCombined(){
+            for(Expense o : listExpense){
+                bd=bd.add(o.getAmount());
+            } 
+            for(Income i: listIncome){
+                bD=bD.add(i.getAmount());
+                
+            }  
+            bd.negate();
+            return bD.add(bd);
+        }
+    
+    
 }
