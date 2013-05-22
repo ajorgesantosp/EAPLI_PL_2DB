@@ -32,12 +32,12 @@ public class Account {
     void setSaldoInicial(BigDecimal saldo){
              
        // if(re.setSaldo(saldo))
-       //     this.saldo=saldo;    
+       //     this.saldo=saldo;
         
     }
     
    
-          public BigDecimal allCombined(){
+     public BigDecimal allCombined(){
             for(Expense o : listExpense){
                 bd=bd.add(o.getAmount());
             } 
