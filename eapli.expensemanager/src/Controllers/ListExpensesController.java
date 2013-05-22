@@ -23,12 +23,14 @@ public class ListExpensesController extends BaseController{
     }
     
     public List<Expense> getListExpenditures(){
-        
-      
         return rec.getListExpenditures();
     }
     
     public List<Expense> getLastMonthExpenses(){
         return rec.getLastMonthExpense();
+    }
+    
+    public List<Expense> getExpensesBetweenDates(String begin, String end) throws Exception {      
+        return rec.getExpenseBetweenDates(begin, end);
     }
 }

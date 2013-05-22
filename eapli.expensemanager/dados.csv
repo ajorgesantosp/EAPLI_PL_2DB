@@ -1,0 +1,11 @@
+Expense;Description;Amount;ExpenseType;PaymentMean;Date
+21;Jantar;19.39999999999999857891452847979962825775146484375;Alimentação;Teste Jantar;5-2-2013
+18;Comboio;2.399999999999999911182158029987476766109466552734375;Transportes;Teste Comboio;10-5-2013
+12;Cinema;5;Lazer;Teste Cinema;8-4-2013
+9;Sapatilhas;123.400000000000005684341886080801486968994140625;Vestuario;Teste Sapatilhas;5-1-2013
+6;Almoço;12.4000000000000003552713678800500929355621337890625;Alimentação;Teste Almoço;5-2-2012
+
+Income;Description;Amount;IncomeType;Date
+0;Salario mes Fevereiro;2200;5-3-2013
+0;Salario mes Janeiro;1200;5-2-2013
+

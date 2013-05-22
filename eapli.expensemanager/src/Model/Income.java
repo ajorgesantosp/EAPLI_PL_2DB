@@ -56,6 +56,11 @@ public class Income extends BaseType {
         return this.d;
     }
 
+    public String getIncomeType(){
+        return type.getDescription();
+    }
+    
+    
     public void incomeToString() {
 
 

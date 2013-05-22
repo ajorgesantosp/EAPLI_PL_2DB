@@ -7,7 +7,11 @@ package Model;
 import Persistence.ExpenseTypeRepository;
 import Persistence.inMemory.ExpenseRepository;
 import eapli.exception.EmptyList;
+import eapli.util.DateTime;
 import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -20,7 +24,7 @@ import java.util.List;
 public class RecordExpense {
 
     ExpenseRepository expr;
-    private static List<Expense> lista = new ArrayList<Expense>();;
+    private static List<Expense> lista = new ArrayList<Expense>();
 
     public RecordExpense() {
         expr = new ExpenseRepository();
@@ -86,6 +90,8 @@ public class RecordExpense {
 
     }
 
+    
+    
     public List<Expense> getLastMonthExpense() {
 
         List<Expense> monthExpense = new ArrayList<Expense>();
@@ -157,8 +163,22 @@ public class RecordExpense {
     }
     
     
-    
-    
+    public List<Expense> getExpenseBetweenDates(String begin,String end) throws Exception{
+        
+        List<Expense> exp = new ArrayList<Expense>();
+         
+        Date beginDate=DateTime.parseDate(begin);
+        Date endDate=DateTime.parseDate(end);
+        
+        for (int i = 0; i < lista.size(); i++) {
+            Date d=(Date)lista.get(i).getDate();
+            if (d.compareTo(beginDate)>=0 && d.compareTo(endDate)<=0){   
+                exp.add(lista.get(i));
+            }
+        }
+        
+        return exp;
+    }
     
     
     
