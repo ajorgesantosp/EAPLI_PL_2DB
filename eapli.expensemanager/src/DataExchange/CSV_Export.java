@@ -37,7 +37,7 @@ public  class CSV_Export {
             
                 Expense e = despesas.get(tamanho_despesas);
                 
-            StrW.write(e.getId()+";"+e.getDescription()+";"+e.getAmount()+";"+e.getType()+";"+e.getPaymentMean()+
+            StrW.write(e.getId()+";"+e.getDescription()+";"+e.getAmount()+";"+e.getType()+";"+e.getPaymentMeanString()+
                         ";"+e.getDate().getDate()+"-"+(e.getDate().getMonth()+1)+"-"+(e.getDate().getYear()+1900)+"\n");
             
             tamanho_despesas--;
@@ -53,7 +53,7 @@ public  class CSV_Export {
             
                 Income i = receitas.get(tamanho_receitas);
                 
-           StrW.write(i.getId()+";"+i.getDescription()+";"+i.getAmount()+";"+i.getIncomeType()+";"+
+           StrW.write(i.getId()+";"+i.getDescription()+";"+i.getAmount()+";"+i.getIncomeTypeString()+";"+
                    +i.getDate().getDate()+"-"+(i.getDate().getMonth()+1)+"-"+(i.getDate().getYear()+1900)+"\n");
             
             tamanho_receitas--;

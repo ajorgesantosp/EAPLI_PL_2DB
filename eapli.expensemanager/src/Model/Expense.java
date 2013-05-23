@@ -52,7 +52,7 @@ public class Expense extends BaseType {
         return this.d;
     }
     
-    public String  getPaymentMean(){
+    public String  getPaymentMeanString(){
        return this.mean.description;
     }
     

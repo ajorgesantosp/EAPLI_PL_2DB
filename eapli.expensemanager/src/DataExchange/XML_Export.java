@@ -55,7 +55,7 @@ public  class XML_Export {
 
             f1.write("<PaymentMean>");
 //escrita da meio
-            f1.write(String.valueOf(e.getPaymentMean().toString()));
+            f1.write(String.valueOf(e.getPaymentMeanString().toString()));
             f1.write("</PaymentMean>\n");
 
             f1.write("<ExpenseType>");
@@ -96,7 +96,7 @@ public  class XML_Export {
 
             f1.write("<IncomeType>");
 //escrita do tipo
-            f1.write(String.valueOf((i.getIncomeType()).toString()));
+            f1.write(String.valueOf((i.getIncomeTypeString()).toString()));
             f1.write("</IncomeType>\n");
 
             f1.write("</Income\n");
