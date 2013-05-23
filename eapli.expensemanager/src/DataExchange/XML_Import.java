@@ -30,7 +30,7 @@ public abstract class XML_Import {
         //RegisterIncomeController  inc_controller = new RegisterIncomeController();
 
         try {
-            Scanner inputStream = new Scanner(new File("importa_xml.csv"));
+            Scanner inputStream = new Scanner(new File("export_xml.xml"));
 
             while (inputStream.hasNext()) {
 
@@ -45,9 +45,9 @@ public abstract class XML_Import {
         }
 
         String values[] = geral.split("</Income>");
-        values[0] = geral;
+        geral=values[0] ;
         values = geral.split("<Expenses>");
-        values[1] = geral;
+        geral=values[1] ;
         values = geral.split("</Expenses>");
         expenses = values[0]; //correcto
         incomes = values[1]; //falta cortar o <Income>

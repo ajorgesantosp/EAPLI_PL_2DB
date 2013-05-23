@@ -99,7 +99,7 @@ public  class XML_Export {
             f1.write(String.valueOf((i.getIncomeTypeString()).toString()));
             f1.write("</IncomeType>\n");
 
-            f1.write("</Income\n");
+            f1.write("</Income>\n");
             
             tamanho_receitas--;
 
