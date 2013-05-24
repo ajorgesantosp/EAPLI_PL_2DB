@@ -9,9 +9,6 @@ import Persistence.inMemory.ExpenseRepositoryImp;
 import eapli.exception.EmptyList;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -23,7 +20,7 @@ import java.util.List;
  */
 public class RecordExpense {
 
-    ExpenseRepository expr;
+    ExpenseRepositoryImp expr;
     private static List<Expense> lista = new ArrayList<Expense>();
 
     public RecordExpense() {
