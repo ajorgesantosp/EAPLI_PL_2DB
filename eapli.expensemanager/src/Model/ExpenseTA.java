@@ -8,7 +8,7 @@ import java.util.Comparator;
  * @author 1100905  & 1070413
  */
 
-public class ExpenseTA{
+public class ExpenseTA {
 
     
     private ExpenseType type;

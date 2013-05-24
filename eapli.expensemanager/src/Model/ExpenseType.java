@@ -6,14 +6,16 @@ package Model;
 
 import javax.persistence.Entity;
 import java.util.Comparator;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 /**
  *
  * @author dg5s5dfsd5fs5d
  */
 @Entity
-public class ExpenseType extends BaseType {
+public class ExpenseType extends MovementType {
 
+    @Id
     private String type;
 
     protected ExpenseType() {
