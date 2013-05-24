@@ -4,20 +4,17 @@
  */
 package Controllers;
 
-import Model.Account;
-import java.math.BigDecimal;
-
 /**
  *
  * @author Emanuel
  */
 public class AccountController {
     
-    
+        /*
       public BigDecimal showBalance(){
         Account acc = new Account();
        
         return acc.getSaldo().add(acc.allCombined());
        
-    }
+    }*/
 }

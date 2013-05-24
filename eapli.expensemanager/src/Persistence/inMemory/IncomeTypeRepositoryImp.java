@@ -5,6 +5,7 @@
 package Persistence.inMemory;
 
 import Model.IncomeType;
+import Persistence.Interfaces.IncomeTypeRepository;
 import eapli.exception.EmptyList;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +15,11 @@ import java.util.List;
  *
  * @autor 1110186 & 1110590
  */
-public class IncomeTypeRepository implements Persistence.Interfaces.IncomeTypeRepository{
+public class IncomeTypeRepositoryImp implements IncomeTypeRepository{
 
     private static List<IncomeType> listIncomeType = new ArrayList<IncomeType>();
     
-    public IncomeTypeRepository(){}
+    public IncomeTypeRepositoryImp(){}
     
     @Override
     public void save(IncomeType intType) {
@@ -29,7 +30,7 @@ public class IncomeTypeRepository implements Persistence.Interfaces.IncomeTypeRe
         listIncomeType.add(intType);
     }
     
-       public List<IncomeType> getAllIncomeType() throws EmptyList {
+    public List<IncomeType> getAllIncomeType() throws EmptyList {
         List<IncomeType> aIncType = listIncomeType;
         if(aIncType.isEmpty()){
             throw new EmptyList("Exception EmptyList");
@@ -37,7 +38,5 @@ public class IncomeTypeRepository implements Persistence.Interfaces.IncomeTypeRe
         
         return aIncType;
     }
-
-   
     
 }

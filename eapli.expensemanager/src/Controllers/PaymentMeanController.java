@@ -5,7 +5,7 @@
 package Controllers;
 
 import Model.PaymentMean;
-import Persistence.inMemory.PaymentMeanRepository;
+import Persistence.inMemory.PaymentMeanRepositoryImp;
 import java.util.List;
 
 /**
@@ -21,7 +21,7 @@ public class PaymentMeanController {
             throw new IllegalArgumentException();
         } else {
             PaymentMean payMean = new PaymentMean(description, mean);
-            PaymentMeanRepository repo = new PaymentMeanRepository();
+            PaymentMeanRepositoryImp repo = new PaymentMeanRepositoryImp();
             repo.save(payMean);
         }
     }

@@ -109,4 +109,17 @@ public class Income extends BaseType {
         hash = 29 * hash + (this.d != null ? this.d.hashCode() : 0);
         return hash;
     }
+
+    public void IncomeToString() {
+        int ano = this.d.getYear();
+        //fix corrigir o bug no getYear do Date
+        ano = ano + 1900;
+
+        System.out.println("**********************************");
+        System.out.println("Amount: " + this.description);
+        System.out.println("Date: " + d + "/" + ano);
+        System.out.println("Tipe: " + type);
+        System.out.println("**********************************\n");
+
+    }
 }
