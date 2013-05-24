@@ -4,6 +4,7 @@
  */
 package DataExchange;
 
+import Controllers.InsertIncomeController;
 import Controllers.RegisterExpenseController;
 import Model.ExpenseType;
 import Model.IncomeType;
@@ -30,6 +31,7 @@ public  class CSV_Import {
         String linha;
         boolean flag = false; 
         RegisterExpenseController controller = new RegisterExpenseController();
+        InsertIncomeController  inc_controller = new InsertIncomeController();
 
         try {
             Scanner inputStream = new Scanner(new File(file));
@@ -89,7 +91,7 @@ public  class CSV_Import {
 
                     IncomeType inc = new IncomeType(descricao, values[3]);
                     
-                    //inc_controller.createIncome(descricao, date, sPrice, inc);
+                     inc_controller.registerIncome(sPrice, date, descricao, inc);
                 }
 
             }

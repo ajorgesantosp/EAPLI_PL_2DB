@@ -4,6 +4,7 @@
  */
 package DataExchange;
 
+import Controllers.InsertIncomeController;
 import Controllers.RegisterExpenseController;
 import Model.ExpenseType;
 import Model.IncomeType;
@@ -27,7 +28,7 @@ public abstract class XML_Import {
         String expenses = "";
         String incomes = "";
         RegisterExpenseController exp_controller = new RegisterExpenseController();
-        //RegisterIncomeController  inc_controller = new RegisterIncomeController();
+        InsertIncomeController  inc_controller = new InsertIncomeController();
 
         try {
             Scanner inputStream = new Scanner(new File("export_xml.xml"));
@@ -181,7 +182,7 @@ public abstract class XML_Import {
             
             IncomeType inc = new IncomeType(descricao, incometype);
 
-            //inc_controller.createIncome(descricao, date, sPrice, inc);
+            inc_controller.registerIncome(sPrice, date, descricao, inc);
 
         }
         
