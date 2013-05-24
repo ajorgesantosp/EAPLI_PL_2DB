@@ -6,17 +6,16 @@ package eapli.bootstrap;
 
 import Model.Expense;
 import Model.PaymentMean;
-import Persistence.inMemory.ExpenseRepository;
-import Persistence.ExpenseTypeRepository;
+import Persistence.inMemory.ExpenseTypeRepositoryImp;
 import Model.ExpenseType;
 import Model.Income;
 import Model.IncomeType;
+import Persistence.inMemory.ExpenseRepository;
 import Persistence.inMemory.IncomeRepository;
-import Persistence.inMemory.PaymentMeanRepository;
+import Persistence.inMemory.PaymentMeanRepositoryImp;
 import eapli.exception.InvalidValue;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  *
@@ -40,12 +39,12 @@ public class ExpenseBootstrapper {
             incRepo.save(new Income("Salario mes Janeiro",DateTime.parseDate("5-2-2013"),new BigDecimal(1200),new IncomeType("Salario","Salario")));
             incRepo.save(new Income("Salario mes Fevereiro",DateTime.parseDate("5-3-2013"),new BigDecimal(2200),new IncomeType("Salario","Salario")));
             
-            PaymentMeanRepository repo2 = new PaymentMeanRepository();
+            PaymentMeanRepositoryImp repo2 = new PaymentMeanRepositoryImp();
             repo2.save(new PaymentMean("Teste Cartao Debito", "Cartao Debito"));
             repo2.save(new PaymentMean("Teste Cartao Credito", "Cartao Credito"));
             repo2.save(new PaymentMean("Teste Dinheiro", "Dinheiro"));
 
-            ExpenseTypeRepository repo3 = new ExpenseTypeRepository();
+            ExpenseTypeRepositoryImp repo3 = new ExpenseTypeRepositoryImp();
             repo3.save(new ExpenseType("Despesas de alimentação", "Alimentação"));
             repo3.save(new ExpenseType("Despesas de transportes", "Transportes"));
             repo3.save(new ExpenseType("Despesas de vestuario", "Vestuario"));
