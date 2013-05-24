@@ -4,6 +4,7 @@
  */
 package Persistence;
 
+import Persistence.inMemory.ExpenseTypeRepositoryImp;
 import Model.ExpenseType;
 import java.util.List;
 import org.junit.After;
@@ -40,7 +41,7 @@ public class ExpenseTypeRepositoryTest {
 
     
     /**
-     * Test of save method, of class ExpenseTypeRepository.
+     * Test of save method, of class ExpenseTypeRepositoryImp.
      */
     @Test
     public void testSaveDuplicate() {
@@ -48,12 +49,12 @@ public class ExpenseTypeRepositoryTest {
     }
     
     /**
-     * Test of ListExpenseTypes method, of class ExpenseTypeRepository.
+     * Test of ListExpenseTypes method, of class ExpenseTypeRepositoryImp.
      */
     @Test
     public void testListExpenseTypes() {
         System.out.println("ListExpenseTypes");
-        ExpenseTypeRepository instance = new ExpenseTypeRepository();
+        ExpenseTypeRepositoryImp instance = new ExpenseTypeRepositoryImp();
         List expResult = null;
         List result = instance.ListExpenseTypes();
         assertEquals(expResult, result);
@@ -62,12 +63,12 @@ public class ExpenseTypeRepositoryTest {
     }
 
     /**
-     * Test of getAllExpenseType method, of class ExpenseTypeRepository.
+     * Test of getAllExpenseType method, of class ExpenseTypeRepositoryImp.
      */
     @Test
     public void testGetAllExpenseType() {
         System.out.println("getAllExpenseType");
-        ExpenseTypeRepository instance = new ExpenseTypeRepository();
+        ExpenseTypeRepositoryImp instance = new ExpenseTypeRepositoryImp();
         List expResult = null;
         List result = instance.getAllExpenseType();
         assertEquals(expResult, result);
