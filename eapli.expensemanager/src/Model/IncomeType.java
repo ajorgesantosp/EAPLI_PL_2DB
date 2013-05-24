@@ -1,22 +1,25 @@
 package Model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * @change 1110186
  * @author i100905
  */
 @Entity
-public class IncomeType extends BaseType {
+public class IncomeType extends MovementType {
 
+    @Id
     private String type;
 
     protected IncomeType() {
     }
 
     public IncomeType(String type, String description) {
+        super(description);
         this.type = type;
-        this.description = description;
+        
     }
 
     /**

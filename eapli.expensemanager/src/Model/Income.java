@@ -57,7 +57,7 @@ public class Income extends BaseType {
     }
 
     public String getIncomeTypeString(){
-        return type.getDescription();
+        return type.getDescripiton();
     }
     
     

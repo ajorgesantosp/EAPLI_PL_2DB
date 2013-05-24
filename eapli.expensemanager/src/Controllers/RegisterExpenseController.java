@@ -4,8 +4,8 @@ import Model.Expense;
 import Model.ExpenseType;
 import Model.PaymentMean;
 import Model.RecordExpense;
-import Persistence.ExpenseTypeRepository;
-import Persistence.inMemory.PaymentMeanRepository;
+import Persistence.inMemory.ExpenseTypeRepositoryImp;
+import Persistence.inMemory.PaymentMeanRepositoryImp;
 import eapli.exception.EmptyList;
 import eapli.exception.InvalidValue;
 import java.math.BigDecimal;
@@ -28,7 +28,7 @@ public class RegisterExpenseController extends BaseController {
 
         List<ExpenseType> expenseTypes;
 
-        ExpenseTypeRepository expenseTypeRepository = new ExpenseTypeRepository();
+        ExpenseTypeRepositoryImp expenseTypeRepository = new ExpenseTypeRepositoryImp();
 
         //Lista completa dos tipos de despesas
         expenseTypes = expenseTypeRepository.getAllExpenseType();
@@ -50,7 +50,7 @@ public class RegisterExpenseController extends BaseController {
 
         List<PaymentMean> paymentMeans;
 
-        PaymentMeanRepository payMeansRepository = new PaymentMeanRepository();
+        PaymentMeanRepositoryImp payMeansRepository = new PaymentMeanRepositoryImp();
 
         //Lista completa dos cartões de debito
         paymentMeans = payMeansRepository.getAllPaymentMean();

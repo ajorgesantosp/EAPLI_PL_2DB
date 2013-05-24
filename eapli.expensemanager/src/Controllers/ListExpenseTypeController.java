@@ -4,7 +4,7 @@
  */
 package Controllers;
 
-import Persistence.ExpenseTypeRepository;
+import Persistence.inMemory.ExpenseTypeRepositoryImp;
 import Model.ExpenseType;
 
 /**
@@ -12,9 +12,9 @@ import Model.ExpenseType;
  * @author Emanuel
  */
 public class ListExpenseTypeController {
-        public ExpenseTypeRepository listExpense(){
+        public ExpenseTypeRepositoryImp listExpense(){
         
-       ExpenseTypeRepository repo = new ExpenseTypeRepository(); 
+       ExpenseTypeRepositoryImp repo = new ExpenseTypeRepositoryImp(); 
        return repo;
     }
 }
