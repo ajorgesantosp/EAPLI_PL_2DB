@@ -5,7 +5,9 @@
 package Controllers;
 
 import Model.Expense;
+import Model.Income;
 import Model.RecordExpense;
+import Model.RecordIncome;
 import java.util.List;
 
 /**
@@ -74,4 +76,66 @@ public abstract class BaseController {
 
          */
     }
+    
+    private List<Income> getLastMonthIncome() {
+
+        /*
+        ExpenseRepository repo = new ExpenseRepository();
+
+        return repo.getLastMonthExpense();*/
+        
+        RecordIncome ie=new RecordIncome();
+        
+        return ie.getLastMonthIncome();
+
+
+    }
+
+    private List<Income> getWeeklyIncome() {
+
+        //ExpenseRepository exprep = new ExpenseRepository();
+        RecordIncome ie=new RecordIncome();
+        return ie.getWeeklyIncome();
+        
+
+
+    }
+
+    public void showWeeklyIncomes() {
+        System.out.println("* * *  SHOW WEEKLY Incomes  * * *\n");
+
+
+
+        List<Income> l = getWeeklyIncome();
+        System.out.println("* * *  Show Current Week Income  * * *\n");
+
+        for (int i = 0; i < l.size(); i++) {
+            l.get(i).IncomeToString();
+                    
+
+        }/*
+         System.out.println("Press Enter to continue.");
+         Scanner sc = new Scanner(System.in);
+         sc.nextLine();*/
+    }
+
+    public void ShowlastMonthIncomeLoop() {
+
+
+        List<Income> l = getLastMonthIncome();
+
+        System.out.println("* * *  Show Last Month Income  * * *\n");
+
+        for (int i = 0; i < l.size(); i++) {
+            l.get(i).IncomeToString();
+
+        }/*
+         System.out.println("Press Enter to continue.");
+         Scanner sc = new Scanner(System.in);
+         sc.nextLine();
+
+         */
+    }
 }
+
+

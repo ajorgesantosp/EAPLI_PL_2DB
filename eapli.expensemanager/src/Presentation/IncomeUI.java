@@ -5,8 +5,8 @@
 package Presentation;
 
 import Controllers.BaseController;
-import Model.Expense;
-import Controllers.ListExpensesController;
+import Controllers.ListIncomeController;
+import Model.Income;
 import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,20 +14,19 @@ import java.util.Scanner;
 
 /**
  *
- * @author i101068
+ * @author Pedro
  */
-public class ExpensesUI extends BaseUI {
+public class IncomeUI extends BaseUI {
 
-    Expense exp;
+    Income exp;
     BigDecimal amount;
     String description;
 
-    ListExpensesController ec;
+    ListIncomeController ic;
     
   
-    public ExpensesUI() {
-        ec=new ListExpensesController();
-        
+    public IncomeUI() {
+        ic=new ListIncomeController();
     }
 
     public void doShow() {
@@ -39,12 +38,12 @@ public class ExpensesUI extends BaseUI {
             this.showBalance();
 
             System.out.println("===================");
-            System.out.println("  LIST EXPENSES  ");
+            System.out.println("  LIST INCOME  ");
             System.out.println("===================\n");
 
-            System.out.println("1. Last Month Expenses");
-            System.out.println("2. All Expenses");
-            System.out.println("3. Current Week Expenses");
+            System.out.println("1. Last Month Income");
+            System.out.println("2. All Income");
+            System.out.println("3. Current Week Income");
             System.out.println("0. Exit\n\n");
             option = Console.readInteger("Please choose a option");
 
@@ -53,10 +52,10 @@ public class ExpensesUI extends BaseUI {
 
                     return;
                 case 1:
-                    lastMonthExpensesLoop();
+                    lastMonthIncomeLoop();
                     break;
                 case 2:
-                    ListExpenditures();
+                    ListIncomes();
                     break;
                 case 3:
                     getWeeklyExpenses();
@@ -67,16 +66,16 @@ public class ExpensesUI extends BaseUI {
 
     }
 
-    public void lastMonthExpensesLoop() {
+    public void lastMonthIncomeLoop() {
 
 
         
-        List<Expense> l = ec.getLastMonthExpenses();
+        List<Income> l = ic.getLastMonthIncome();
 
         System.out.println("* * *  Show Last Month Expense  * * *\n");
 
         for (int i = 0; i < l.size(); i++) {
-            l.get(i).expenseToString();
+            l.get(i).IncomeToString();
 
         }
         System.out.println("Press Enter to continue.");
@@ -86,37 +85,17 @@ public class ExpensesUI extends BaseUI {
 
     }
 
-    public void ListExpenditures() {
-        System.out.println("* * *  SHOW LIST EXPENDITURES  * * *\n");
-
-        
-
-        List<Expense> aExp = ec.getListExpenditures();
-
-        for (int i = 0; i < aExp.size(); i++) {
-
-            System.out.println("<--- " + (i + 1) + "º Expense --->");
-            aExp.get(i).expenseToString();
-            /*System.out.println("Amount : " + aExp.get(i).getAmount().doubleValue() + "");
-            System.out.println("Description : " + aExp.get(i).getDescription() + "");
-            System.out.println("Date : " + aExp.get(i).getDate()+ "\n");*/
-        }
-
-        System.out.println("Press Enter to continue.");
-        Scanner sc = new Scanner(System.in);
-        sc.nextLine();
-
-    }
+      
     
     public void getWeeklyExpenses(){
         System.out.println("* * *  SHOW CURRENT WEEK EXPENDITURES  * * *\n");
 
         
 
-        List<Expense> l = ec.getWeeklyExpenses();
+        List<Income> l = ic.getWeeklyIncome();
         
         for (int i = 0; i < l.size(); i++) {
-            l.get(i).expenseToString();
+            l.get(i).incomeToString();
 
         }
         System.out.println("Press Enter to continue.");
@@ -124,9 +103,30 @@ public class ExpensesUI extends BaseUI {
         sc.nextLine();
     }
 
-    @Override
-    protected BaseController getController() {
-        return ec;
+    public void ListIncomes() {
+        System.out.println("* * *  SHOW LIST EXPENDITURES  * * *\n");
+
+        
+
+        List<Income> aExp = ic.getListIncome();
+
+        for (int i = 0; i < aExp.size(); i++) {
+
+            System.out.println("<--- " + (i + 1) + "º Income --->");
+            aExp.get(i).IncomeToString();
+            
+        }
+
+        System.out.println("Press Enter to continue.");
+        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
+
     }
     
+    @Override
+    protected BaseController getController() {
+        return ic;
+    }
+
 }
+
