@@ -24,12 +24,23 @@ public class AlertLimit {
     public AlertLimit() {
         weeklyExpenseLimitRed = BigDecimal.ZERO;
         weeklyExpenseLimitYellow = BigDecimal.ZERO;
-        monthlyExpenseLimitRed= BigDecimal.ZERO;
-        monthlyExpenseLimitYellow= BigDecimal.ZERO;
-        minBalanceRed= BigDecimal.ZERO;
-        minBalanceYellow= BigDecimal.ZERO;
-        deviationLimitRed= BigDecimal.ZERO;
-        deviationLimitYellow= BigDecimal.ZERO;
+        monthlyExpenseLimitRed = BigDecimal.ZERO;
+        monthlyExpenseLimitYellow = BigDecimal.ZERO;
+        minBalanceRed = BigDecimal.ZERO;
+        minBalanceYellow = BigDecimal.ZERO;
+        deviationLimitRed = BigDecimal.ZERO;
+        deviationLimitYellow = BigDecimal.ZERO;
+    }
+
+    public AlertLimit(BigDecimal elr, BigDecimal ely, BigDecimal emr, BigDecimal emy, BigDecimal mbr, BigDecimal mby, BigDecimal dlr, BigDecimal dly) {
+        setWeeklyExpenseLimitRed(elr);
+        setWeeklyExpenseLimitYellow(ely);
+        setMonthlyExpenseLimitRed(emr);
+        setMonthlyExpenseLimitYellow(emy);
+        setMinBalanceRed(mbr);
+        setMinBalanceYellow(mby);
+        setDeviationLimitRed(dlr);
+        setDeviationLimitYellow(dly);
     }
 
     /**

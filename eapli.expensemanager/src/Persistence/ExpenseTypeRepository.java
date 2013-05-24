@@ -44,6 +44,15 @@ public class ExpenseTypeRepository implements Persistence.Interfaces.ExpenseType
             return null;
         }
     
+        public boolean FindStringExpenseTypes(String nome) {
+        
+            for(ExpenseType o : listExpenseType){
+                if(o.getType().equals(nome)){
+                    return true;
+                }  
+            }
+            return false;
+        }
     /**
      * @autor nbentoneves
      * 
