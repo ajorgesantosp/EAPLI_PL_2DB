@@ -10,6 +10,7 @@ import Controllers.ListIncomeController;
 import DataExchange.CSV_Export;
 import DataExchange.CSV_Import;
 import DataExchange.XML_Export;
+import DataExchange.XML_Import;
 import Model.Expense;
 import Model.Income;
 import eapli.util.Console;
@@ -73,7 +74,11 @@ public class ExporImportUI{
             }
                     break;
                 case 4:
-                    ImportXML();
+            try {
+                ImportXML();
+            } catch (Exception ex) {
+                System.out.println(ex.toString());
+            }
                     break;
             }
         } while (option != 0);
@@ -104,11 +109,15 @@ public class ExporImportUI{
     }
 
     private void ImportCSV() throws Exception {
-        CSV_Import.ImportCSV("dados.csv");
+         System.out.println("File name:");
+        String file = in.nextLine();
+        CSV_Import.ImportCSV(file);
     }
 
-    private void ImportXML() {
-       
+    private void ImportXML() throws Exception {
+         System.out.println("File name:");
+        String file = in.nextLine();
+        XML_Import.leitura(file);
     }
     
 }

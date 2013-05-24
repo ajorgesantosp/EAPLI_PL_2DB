@@ -21,7 +21,7 @@ import java.util.Scanner;
  */
 public abstract class XML_Import {
 
-    public static void leitura() throws Exception {
+    public static void leitura(String file) throws Exception {
 
         String geral = "";
         String expenses = "";
@@ -30,7 +30,7 @@ public abstract class XML_Import {
         //RegisterIncomeController  inc_controller = new RegisterIncomeController();
 
         try {
-            Scanner inputStream = new Scanner(new File("importa_xml.csv"));
+            Scanner inputStream = new Scanner(new File("export_xml.xml"));
 
             while (inputStream.hasNext()) {
 
@@ -44,20 +44,29 @@ public abstract class XML_Import {
             e.printStackTrace();
         }
 
-        String values[] = geral.split("</Income>");
-        values[0] = geral;
-        values = geral.split("<Expenses>");
-        values[1] = geral;
-        values = geral.split("</Expenses>");
-        expenses = values[0]; //correcto
-        incomes = values[1]; //falta cortar o <Income>
-        values = incomes.split("<Income>");
-        incomes = values[1];
-
-        //fazer um split para guardar as cada despesas/receitas numa posiÃ§Ã£o de um array
-
-        String expense_array[] = expenses.split("</ExpenseType>");
-        String income_array[] = incomes.split("</IncomeType>");
+        String values[] = geral.split("</Expenses>");
+        geral = values[values.length-1];
+        
+        String [] expense_array = new String [values.length-1];
+        
+        for(int j=0;j<values.length-1;j++){
+            
+            String aux = values[j];
+            String aux2 [] = aux.split("<Expenses>");
+            expense_array[j]=aux2[1];
+        }
+        
+        values = geral.split("</Income>");
+        
+        String income_array[] = new String [values.length-1];
+        
+        for(int j=0;j<values.length-1;j++){
+            
+            String aux3 = values[j];
+            String aux4 [] = aux3.split("<Income>");
+            income_array[j]=aux4[1];
+            
+        }
 
         //ciclo para criar despesas
 
@@ -105,7 +114,7 @@ public abstract class XML_Import {
 
             /*Tratamento dos dados de cada despesa*/
 
-            String dats[] = data.split("//");
+            String dats[] = data.split("-");
             int year = Integer.parseInt(dats[2]);
             int month = Integer.parseInt(dats[1]);
             int day = Integer.parseInt(dats[0]);
@@ -161,7 +170,7 @@ public abstract class XML_Import {
 
             /*Tratamento dos dados de cada receita*/
 
-            String dats[] = data.split("//");
+            String dats[] = data.split("-");
             int year = Integer.parseInt(dats[2]);
             int month = Integer.parseInt(dats[1]);
             int day = Integer.parseInt(dats[0]);

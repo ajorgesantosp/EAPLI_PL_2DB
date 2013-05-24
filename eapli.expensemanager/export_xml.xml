@@ -9,46 +9,54 @@
 <Description>Jantar</Description>
 <Amount>19.39999999999999857891452847979962825775146484375</Amount>
 <Date>5-2-2013</Date>
-<PaymentMean><ExpenseType>Alimentação</ExpenseType>
+<PaymentMean>Teste Jantar</PaymentMean>
+<ExpenseType>Alimentação</ExpenseType>
 </Expenses>
 <Expenses>
 <Description>Comboio</Description>
 <Amount>2.399999999999999911182158029987476766109466552734375</Amount>
 <Date>10-5-2013</Date>
-<PaymentMean><ExpenseType>Transportes</ExpenseType>
+<PaymentMean>Teste Comboio</PaymentMean>
+<ExpenseType>Transportes</ExpenseType>
 </Expenses>
 <Expenses>
 <Description>Concerto</Description>
 <Amount>5</Amount>
 <Date>21-5-2013</Date>
-<PaymentMean><ExpenseType>Lazer</ExpenseType>
+<PaymentMean>Teste Concerto</PaymentMean>
+<ExpenseType>Lazer</ExpenseType>
 </Expenses>
 <Expenses>
 <Description>Cinema</Description>
 <Amount>5</Amount>
 <Date>8-4-2013</Date>
-<PaymentMean><ExpenseType>Lazer</ExpenseType>
+<PaymentMean>Teste Cinema</PaymentMean>
+<ExpenseType>Lazer</ExpenseType>
 </Expenses>
 <Expenses>
 <Description>Sapatilhas</Description>
 <Amount>123.400000000000005684341886080801486968994140625</Amount>
 <Date>5-1-2013</Date>
-<PaymentMean><ExpenseType>Vestuario</ExpenseType>
+<PaymentMean>Teste Sapatilhas</PaymentMean>
+<ExpenseType>Vestuario</ExpenseType>
 </Expenses>
 <Expenses>
 <Description>Almoço</Description>
 <Amount>12.4000000000000003552713678800500929355621337890625</Amount>
 <Date>5-2-2012</Date>
-<PaymentMean><ExpenseType>Alimentação</ExpenseType>
+<PaymentMean>Teste Almoço</PaymentMean>
+<ExpenseType>Alimentação</ExpenseType>
 </Expenses>
 <Income>
 <Description>Salario mes Fevereiro</Description>
 <Amount>2200</Amount>
 <Date>5-3-2013</Date>
-<IncomeType></Income
+<IncomeType>Salario</IncomeType>
+</Income
 <Income>
 <Description>Salario mes Janeiro</Description>
 <Amount>1200</Amount>
 <Date>5-2-2013</Date>
-<IncomeType></Income
+<IncomeType>Salario</IncomeType>
+</Income
 </Expenses_Income>
