@@ -54,6 +54,10 @@ public class Expense extends BaseType {
         return this.d;
     }
     
+    public String  getPaymentMeanString(){
+       return this.mean.description;
+    }
+    
     public ExpenseType getType() {
         return type;
     }
@@ -62,7 +66,7 @@ public class Expense extends BaseType {
 
         int ano = this.d.getYear();
         //fix corrigir o bug no getYear do Date
-        ano = ano + 1900 + 1900;
+        ano = ano + 1900;
 
         System.out.println("**********************************");
         System.out.println("Descriçao: " + this.description);

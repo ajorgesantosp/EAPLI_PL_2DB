@@ -5,12 +5,7 @@
 package Controllers;
 
 import Model.Account;
-import Model.Expense;
-import Model.Expense;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.List;
 
 /**
  *
@@ -20,7 +15,9 @@ public class AccountController {
     
         /*
       public BigDecimal showBalance(){
-        //Account acc = new Account();
-        //return 0;
-    }*/
+        Account acc = new Account();
+       
+        return acc.getSaldo().add(acc.allCombined());
+       
+    }
 }

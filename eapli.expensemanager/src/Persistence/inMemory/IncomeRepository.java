@@ -4,7 +4,9 @@
  */
 package Persistence.inMemory;
 
+import Model.Expense;
 import Model.Income;
+import eapli.exception.EmptyList;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +27,15 @@ public class IncomeRepository implements Persistence.Interfaces.IncomeRepository
             throw new IllegalArgumentException();
         }
         listIncome.add(inc);
+    }
+    
+    public List<Income> getList() throws EmptyList {
+        List<Income> aExp = listIncome;
+        if(aExp.isEmpty()){
+            throw new EmptyList("Exception EmptyList");
+        }
+        
+        return aExp;
     }
     
 }

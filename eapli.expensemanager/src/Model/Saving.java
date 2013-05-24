@@ -11,10 +11,13 @@ package Model;
 public class Saving {
     private String description;
     private boolean bought;
+    private float price;
 
-    public Saving(String description, boolean bought) {
+
+    public Saving(String description, boolean bought, float price) {
         this.description = description;
         this.bought = bought;
+        this.price = price;
     }
 
     /**
@@ -43,6 +46,20 @@ public class Saving {
      */
     public void setBought(boolean bought) {
         this.bought = bought;
+    }
+
+    /**
+     * @return the price
+     */
+    public float getPrice() {
+        return price;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(float price) {
+        this.price = price;
     }
     
     

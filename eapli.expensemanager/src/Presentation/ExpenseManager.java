@@ -5,6 +5,7 @@
 package Presentation;
 
 import Model.RecordExpense;
+import Model.RecordIncome;
 import Presentation.MainMenu;
 import eapli.util.Math;
 import Persistence.*;
@@ -28,8 +29,10 @@ public class ExpenseManager {
         
         ExpenseBootstrapper eb= new ExpenseBootstrapper();
         RecordExpense re=new RecordExpense();
+        RecordIncome ri=new RecordIncome();
         try {
             re.loadRepository();
+            ri.loadRepository();
         } catch (EmptyList ex) {
             System.out.println(ex.getMessage());
         }catch (Exception ex){
