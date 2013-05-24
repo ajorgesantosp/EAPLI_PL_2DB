@@ -3,8 +3,8 @@ package Controllers;
 
 import Model.Income;
 import Model.IncomeType;
-import Persistence.inMemory.IncomeRepository;
-import Persistence.inMemory.IncomeTypeRepository;
+import Persistence.inMemory.IncomeRepositoryImp;
+import Persistence.inMemory.IncomeTypeRepositoryImp;
 import eapli.exception.EmptyList;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -24,7 +24,7 @@ public class InsertIncomeController {
 
         List<IncomeType> incomeTypes;
 
-        IncomeTypeRepository incomeTypeRepository = new IncomeTypeRepository();
+        IncomeTypeRepositoryImp incomeTypeRepository = new IncomeTypeRepositoryImp();
 
         //Lista completa dos tipos de receitas
         incomeTypes = incomeTypeRepository.getAllIncomeType();
@@ -40,7 +40,7 @@ public class InsertIncomeController {
     public void registerIncome(BigDecimal amount, Date date, String description, IncomeType incomeType){
         
         Income inc = new Income(description, date, amount, incomeType);
-        IncomeRepository repo = new IncomeRepository();
+        IncomeRepositoryImp repo = new IncomeRepositoryImp();
         repo.save(inc);
         
     }

@@ -38,14 +38,14 @@ public class ExpenseRepositoryTest {
     @Test(expected = eapli.exception.EmptyList.class)
     public void testGetList() throws EmptyList {
         System.out.println("### getList ###");
-        ExpenseRepository repo = new ExpenseRepository();
+        ExpenseRepositoryImp repo = new ExpenseRepositoryImp();
         repo.getList();
     }
     
     @Test
     public void testSave() throws EmptyList {
         System.out.println("### saveRepository ###");
-        ExpenseRepository repo = new ExpenseRepository();
+        ExpenseRepositoryImp repo = new ExpenseRepositoryImp();
         repo.save(exp);
         
         Expense expGetRepo = repo.findLast();
@@ -57,7 +57,7 @@ public class ExpenseRepositoryTest {
     @Test
     public void testFindLast() throws EmptyList, InvalidValue {
         System.out.println("### findLast ###");
-        ExpenseRepository repo = new ExpenseRepository();
+        ExpenseRepositoryImp repo = new ExpenseRepositoryImp();
 
         Expense expResult = new Expense("Teste 2 Despesa", new Date(2011,10,10), new BigDecimal(3), new ExpenseType("Despesa de Alimentação", "Alimentação"), new PaymentMean("Banco de Lisboa", "BPI"));
         repo.save(expResult);

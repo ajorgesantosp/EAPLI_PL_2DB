@@ -9,6 +9,7 @@ import Persistence.Interfaces.*;
 public interface RepositoryFactory {
     
     ExpenseRepository expenseRepository();
+    //ExpenseTypeRepository expenseTypeRepository();
     IncomeRepository incomeRepository();
     IncomeTypeRepository incomeTypeRepository();
     PaymentMeanRepository paymentMeanRepository();

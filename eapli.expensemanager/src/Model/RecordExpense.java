@@ -4,8 +4,8 @@
  */
 package Model;
 
-import Persistence.ExpenseTypeRepository;
-import Persistence.inMemory.ExpenseRepository;
+import Persistence.inMemory.ExpenseTypeRepositoryImp;
+import Persistence.inMemory.ExpenseRepositoryImp;
 import eapli.exception.EmptyList;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -19,11 +19,11 @@ import java.util.List;
  */
 public class RecordExpense {
 
-    ExpenseRepository expr;
+    ExpenseRepositoryImp expr;
     private static List<Expense> lista = new ArrayList<Expense>();;
 
     public RecordExpense() {
-        expr = new ExpenseRepository();
+        expr = new ExpenseRepositoryImp();
         //lista = new ArrayList<Expense>();
     }
 
@@ -130,7 +130,7 @@ public class RecordExpense {
         List<ExpenseType> expenseTypes = new ArrayList<ExpenseType>();
         
         //Get expenses types
-        ExpenseTypeRepository extrp = new ExpenseTypeRepository();
+        ExpenseTypeRepositoryImp extrp = new ExpenseTypeRepositoryImp();
         expenseTypes = extrp.getAllExpenseType();
   
         //Get specific month

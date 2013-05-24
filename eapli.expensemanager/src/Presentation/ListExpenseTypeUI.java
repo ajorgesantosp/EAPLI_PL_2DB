@@ -5,7 +5,7 @@
 package Presentation;
 
 import Controllers.ListExpenseTypeController;
-import Persistence.ExpenseTypeRepository;
+import Persistence.inMemory.ExpenseTypeRepositoryImp;
 
 
 /**
@@ -19,7 +19,7 @@ public class ListExpenseTypeUI{
         
         
         ListExpenseTypeController controller = new ListExpenseTypeController();
-        ExpenseTypeRepository a;
+        ExpenseTypeRepositoryImp a;
         a=controller.listExpense();
         
         System.out.println(a.getAllExpenseType());
