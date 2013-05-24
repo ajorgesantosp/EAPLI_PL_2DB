@@ -29,7 +29,7 @@ public class IncomeTypeRepository implements Persistence.Interfaces.IncomeTypeRe
         listIncomeType.add(intType);
     }
     
-    public List<IncomeType> getAllIncomeType() throws EmptyList {
+       public List<IncomeType> getAllIncomeType() throws EmptyList {
         List<IncomeType> aIncType = listIncomeType;
         if(aIncType.isEmpty()){
             throw new EmptyList("Exception EmptyList");
@@ -37,5 +37,7 @@ public class IncomeTypeRepository implements Persistence.Interfaces.IncomeTypeRe
         
         return aIncType;
     }
+
+   
     
 }
