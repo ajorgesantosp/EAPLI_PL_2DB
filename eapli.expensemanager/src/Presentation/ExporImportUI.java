@@ -77,7 +77,9 @@ public class ExporImportUI{
             try {
                 ImportXML();
             } catch (Exception ex) {
+
                 System.out.println(ex.toString());
+System.out.println(ex.toString());
             }
                     break;
             }
@@ -115,9 +117,13 @@ public class ExporImportUI{
     }
 
     private void ImportXML() throws Exception {
+
          System.out.println("File name:");
         String file = in.nextLine();
         XML_Import.leitura(file);
+
+     
+
     }
     
 }

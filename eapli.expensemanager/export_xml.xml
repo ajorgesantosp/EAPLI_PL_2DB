@@ -52,11 +52,19 @@
 <Amount>2200</Amount>
 <Date>5-3-2013</Date>
 <IncomeType>Salario</IncomeType>
+<<<<<<< HEAD
 </Income
+=======
+</Income>
+>>>>>>> branch 'master' of https://github.com/ajorgesantosp/EAPLI_PL_2DB.git
 <Income>
 <Description>Salario mes Janeiro</Description>
 <Amount>1200</Amount>
 <Date>5-2-2013</Date>
 <IncomeType>Salario</IncomeType>
+<<<<<<< HEAD
 </Income
+=======
+</Income>
+>>>>>>> branch 'master' of https://github.com/ajorgesantosp/EAPLI_PL_2DB.git
 </Expenses_Income>
