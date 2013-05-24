@@ -6,6 +6,8 @@ package Persistence.JPA;
 
 import Model.IncomeType;
 import Persistence.Interfaces.IncomeTypeRepository;
+import eapli.exception.EmptyList;
+import java.util.List;
 
 /**
  *
@@ -15,6 +17,11 @@ public class IncomeTypeRepositoryImp implements IncomeTypeRepository{
 
     @Override
     public void save(IncomeType intType) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<IncomeType> getAllIncomeType() throws EmptyList {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
