@@ -79,7 +79,7 @@ public class ExporImportUI{
             } catch (Exception ex) {
 
                 System.out.println(ex.toString());
-System.out.println(ex.toString());
+
             }
                     break;
             }
@@ -123,6 +123,7 @@ System.out.println(ex.toString());
         XML_Import.leitura(file);
 
      
+
 
     }
     
