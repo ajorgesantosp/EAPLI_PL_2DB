@@ -93,9 +93,11 @@ public class ExporImportUI{
         String begin = in.nextLine();
         System.out.println("End Date (dd-mm-yyyy):");
         String end = in.nextLine();
+        System.out.println("File name:");
+        String file = in.nextLine();
         List<Expense> listExp=ec.getExpensesBetweenDates(begin, end);
         List<Income> listInc=inc.getExpensesBetweenDates(begin, end);
-        CSV_Export.createCsvFile(begin, end, listExp, listInc);
+        CSV_Export.createCsvFile(begin, end, listExp, listInc,file);
         
         
     }
@@ -105,9 +107,11 @@ public class ExporImportUI{
         String begin = in.nextLine();
         System.out.println("End Date (dd-mm-yyyy):");
         String end = in.nextLine();
+        System.out.println("File name:");
+        String file = in.nextLine();
         List<Expense> listExp=ec.getExpensesBetweenDates(begin, end);
         List<Income> listInc=inc.getExpensesBetweenDates(begin, end);
-        XML_Export.escrita(begin, end, listExp, listInc);
+        XML_Export.escrita(begin, end, listExp, listInc,file);
     }
 
     private void ImportCSV() throws Exception {

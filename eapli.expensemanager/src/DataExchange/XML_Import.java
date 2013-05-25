@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package DataExchange;
 
 import Controllers.InsertIncomeController;
@@ -31,7 +27,7 @@ public abstract class XML_Import {
         InsertIncomeController  inc_controller = new InsertIncomeController();
 
         try {
-            Scanner inputStream = new Scanner(new File("export_xml.xml"));
+            Scanner inputStream = new Scanner(new File(file+".xml"));
 
             while (inputStream.hasNext()) {
 

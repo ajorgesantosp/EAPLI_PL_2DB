@@ -20,24 +20,26 @@ import javax.xml.crypto.Data;
  */
 public  class CSV_Export {
 
-    public  static void createCsvFile(String d1, String d2, List<Expense> despesas, List<Income> receitas) {
+    public  static void createCsvFile(String d1, String d2, List<Expense> despesas, List<Income> receitas, String exp) {
 //A estrutura try-catch Ã© usada pois o objeto BufferedWriter exige que as
 //excessÃµes sejam tratadas
         try {
        int a= (int) Math.PI;
+       
 //CriaÃ§Ã£o de um buffer para a escrita em uma stream
-            BufferedWriter StrW = new BufferedWriter(new FileWriter("dados.csv"));
+            BufferedWriter StrW = new BufferedWriter(new FileWriter(exp+".csv"));
 
 //Escrita dos dados da tabela
             StrW.write("Expense;Description;Amount;ExpenseType;PaymentMean;Date\n");
             
-            int tamanho_despesas = despesas.size()-1;
+            int tamanho_despesas = despesas.size();
             
             while(tamanho_despesas>0){
             
-                Expense e = despesas.get(tamanho_despesas);
+                Expense e = despesas.get(tamanho_despesas-1);
+                           
                 
-            StrW.write(e.getId()+";"+e.getDescription()+";"+e.getAmount()+";"+e.getType()+";"+e.getPaymentMeanString()+
+            StrW.write(e.getId()+";"+e.getDescription()+";"+e.getAmount().floatValue()+";"+e.getType()+";"+e.getPaymentMeanString()+
                         ";"+e.getDate().getDate()+"-"+(e.getDate().getMonth()+1)+"-"+(e.getDate().getYear()+1900)+"\n");
             
             tamanho_despesas--;
@@ -47,14 +49,13 @@ public  class CSV_Export {
             
             StrW.write("Income;Description;Amount;IncomeType;Date\n");
             
-            int tamanho_receitas = receitas.size()-1;
+            int tamanho_receitas = receitas.size();
             
             while(tamanho_receitas>0){
             
-                Income i = receitas.get(tamanho_receitas);
+                Income i = receitas.get(tamanho_receitas-1);
                 
-           StrW.write(i.getId()+";"+i.getDescription()+";"+i.getAmount()+";"+i.getIncomeTypeString()+";"+
-                   +i.getDate().getDate()+"-"+(i.getDate().getMonth()+1)+"-"+(i.getDate().getYear()+1900)+"\n");
+           StrW.write(i.getId()+";"+i.getDescription()+";"+i.getAmount().floatValue()+";"+i.getIncomeTypeString()+";"+i.getDate().getDate()+"-"+(i.getDate().getMonth()+1)+"-"+(i.getDate().getYear()+1900)+"\n");
             
             tamanho_receitas--;
             }

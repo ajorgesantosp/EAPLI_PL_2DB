@@ -17,13 +17,16 @@ import java.util.List;
  */
 public  class XML_Export {
 
-    public static void escrita(String data1, String data2, List<Expense> despesas, List<Income> receitas) throws Exception {
+    public static void escrita(String data1, String data2, List<Expense> despesas, List<Income> receitas, String exp) throws Exception {
 
-        int tamanho_despesas = despesas.size()-1;
-        int tamanho_receitas = receitas.size()-1;
+        System.out.println("Despesas tamanho"+despesas.size());
+        System.out.println("Income tamanho"+receitas.size());
+        
+        int tamanho_despesas = despesas.size();
+        int tamanho_receitas = receitas.size();
 
         //necessita de duas datas como parametro
-        FileWriter f1 = new FileWriter(new File("export_xml.xml"));
+        FileWriter f1 = new FileWriter(new File(exp+".xml"));
         f1.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n\n\n");
         f1.write("<Expenses_Income> \n"
                 + "    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
@@ -35,7 +38,7 @@ public  class XML_Export {
 
             f1.write("<Expenses>\n");
             
-            Expense e = despesas.get(tamanho_despesas);
+            Expense e = despesas.get(tamanho_despesas-1);
 
             f1.write("<Description>");
 //escrita da descriÃ§Ã£o
@@ -77,7 +80,7 @@ public  class XML_Export {
 
             f1.write("<Income>\n");
             
-            Income i = receitas.get(tamanho_receitas);
+            Income i = receitas.get(tamanho_receitas-1);
 
             f1.write("<Description>");
 //escrita da descriÃ§Ã£o

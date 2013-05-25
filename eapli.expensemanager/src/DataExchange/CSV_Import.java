@@ -34,7 +34,7 @@ public  class CSV_Import {
         InsertIncomeController  inc_controller = new InsertIncomeController();
 
         try {
-            Scanner inputStream = new Scanner(new File(file));
+            Scanner inputStream = new Scanner(new File(file+".csv"));
 
             linha = inputStream.nextLine();//Pega na linha inteira  
             String values[] = linha.split("\\;");
